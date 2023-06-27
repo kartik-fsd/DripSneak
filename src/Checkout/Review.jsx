@@ -4,9 +4,6 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Grid from "@mui/material/Grid";
-import { CartProductsSummary } from "../Checkout/components/CartProductsSummary/CartProductsSummary";
-import { BillingSummary } from "../Checkout/components/BillingSummary/BillingSummary";
-import { DeliveryAddress } from "../Checkout/components/DeliveryAddress/DeliveryAddress";
 
 const addresses = ["1 MUI Drive", "Reactville", "Anytown", "99999", "USA"];
 const payments = [
@@ -23,10 +20,10 @@ export default function Review() {
         Order summary
       </Typography>
       <List disablePadding>
-        <CartProductsSummary />
+        {/* <CartProductsSummary />
         <BillingSummary />
 
-        <DeliveryAddress />
+        <DeliveryAddress /> */}
       </List>
       <Grid container spacing={2}>
         <Grid item container xs={12} sm={6} sx={{ color: "grey", ml: 4 }}>
