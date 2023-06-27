@@ -8,7 +8,7 @@ import { ProductListing } from "../ProductListing/ProductListing";
 import { ProductDetails } from "../ProductDetails/ProductDetails";
 import { Cart } from "../Cart/Cart";
 // import { Checkout } from "../Checkout/Checkout";
-import Checkout from "../checkout_order/checkout";
+import Checkout from "../Checkout/checkout";
 
 export const NavRoutes = () => {
   return (
