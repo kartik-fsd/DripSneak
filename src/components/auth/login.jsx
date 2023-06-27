@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   Avatar,
   Box,
@@ -15,18 +15,33 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import { users } from "../../backend/db/users";
+import { useNavigate } from "react-router-dom";
 
 const defaultTheme = createTheme();
 
 export default function Login() {
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    let details = users.filter(
+      (res) =>
+        res.email == data.get("email") && res.password == data.get("password")
+    );
+    if (details.length > 0) {
+      localStorage.setItem("user_email", details[0].email);
+      localStorage.setItem("user_id", details[0]._id);
+      localStorage.setItem("user_name", details[0].firstName);
+      navigate("/");
+      window.location.reload();
+    }
   };
+  let refer = useRef();
+
+  useEffect(() => {
+    refer.current.focus();
+  }, []);
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -61,6 +76,7 @@ export default function Login() {
               name="email"
               autoComplete="email"
               autoFocus
+              ref={refer}
             />
             <TextField
               margin="normal"

@@ -1,14 +1,23 @@
-import { v4 as uuid } from "uuid";
-import { formatDate } from "../utils/authUtils";
-
 export const users = [
   {
-    _id: uuid(),
+    _id: 1,
     firstName: "Chirag",
     lastName: "Taluja",
     email: "chiragtaluja@apple.com",
     password: "chiragtaluja",
-    createdAt: formatDate(),
-    updatedAt: formatDate(),
+  },
+  {
+    _id: 2,
+    firstName: "Tom",
+    lastName: "cat",
+    email: "tomcat@apple.com",
+    password: "tomcat",
+  },
+  {
+    _id: 3,
+    firstName: "Tejas",
+    lastName: "HR",
+    email: "tejasteju11@gmail.com",
+    password: "tomcat",
   },
 ];

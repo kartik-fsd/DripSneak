@@ -292,6 +292,8 @@ const darkTheme = createTheme({
 export default function Navbar() {
   const { dispatch } = useData();
   const navigate = useNavigate();
+  let email = localStorage.getItem("user_email");
+  console.log(email);
   // const { userDataState } = useUserData();
   // const totalProductsInCart = userDataState.cartProducts?.reduce(
   //   (acc, curr) => {
@@ -315,8 +317,15 @@ export default function Navbar() {
   };
 
   const handleMenuClose = () => {
+    if (email != null) {
+      localStorage.removeItem("user_email");
+      localStorage.removeItem("user_id");
+      localStorage.removeItem("user_name");
+    }
     setAnchorEl(null);
     handleMobileMenuClose();
+    navigate("/login");
+    window.location.reload();
   };
 
   const handleMobileMenuOpen = (event) => {
@@ -344,7 +353,7 @@ export default function Navbar() {
 
       <NavLink to="/login" style={{ textDecoration: "none", color: "#FDFDFD" }}>
         <MenuItem onClick={handleMenuClose} sx={{}}>
-          Login
+          {email != null ? "Logout" : " Login"}
         </MenuItem>
       </NavLink>
     </Menu>
@@ -415,7 +424,16 @@ export default function Navbar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box
+      sx={{
+        flexGrow: 1,
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        zIndex: "10000",
+      }}
+    >
       <ThemeProvider theme={darkTheme}>
         <AppBar position="static">
           <Toolbar>
