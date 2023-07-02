@@ -14,16 +14,16 @@ export const Coupons = ({ couponSelected, setCouponSelected }) => {
     {
       id: 1,
       name: "BLACK FRIDAY OFFER",
-      description: "Get $20 off on a purchase of $250",
-      minimumPurchase: 250,
-      amount: 20,
+      description: "Get ₹1620 off on a purchase of ₹20250",
+      minimumPurchase: 20250,
+      amount: 1620,
     },
     {
       id: 2,
       name: "NEW YEAR OFFER",
-      description: "Get 20% off on a purchase of $500",
-      minimumPurchase: 500,
-      discount: 20,
+      description: "Get 20% off on a purchase of ₹40500",
+      minimumPurchase: 40500,
+      discount: 8100,
     },
   ];
 

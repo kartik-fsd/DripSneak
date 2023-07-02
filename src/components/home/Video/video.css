@@ -40,3 +40,17 @@
     text-decoration: none;
     background-color: rgb(255, 255, 255);
   }
+
+  @media (min-width: 768px) {
+  
+    .hero-text h1 {
+      font-size: 6em;
+      align-self: center;
+    }
+    .hero-text h2 {
+      margin-top: 40px;
+      font-size: 1.5em;
+      opacity: 0.8;
+    }
+  }
+  

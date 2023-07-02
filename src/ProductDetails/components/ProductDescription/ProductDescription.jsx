@@ -201,6 +201,7 @@ import "./ProductDescription.css";
 import React from "react";
 import { BsFillStarFill } from "react-icons/bs";
 import { useUserData } from "../../../contexts/UserDataProvider";
+import { useNavigate } from "react-router-dom";
 
 export const ProductDescription = ({ selectedProduct }) => {
   // const {
@@ -210,6 +211,7 @@ export const ProductDescription = ({ selectedProduct }) => {
   //   isProductInWishlist,
   //   cartLoading,
   // } = useUserData();
+  const navigate = useNavigate();
 
   return (
     <div className="product-details-description">
@@ -262,10 +264,12 @@ export const ProductDescription = ({ selectedProduct }) => {
           //disabled={cartLoading}
           //onClick={() => addToCartHandler(selectedProduct)}
           className="add-to-cart-btn"
+          onClick={() => navigate(`/cart/${selectedProduct?._id}`)}
         >
           {/* {!isProductInCart(selectedProduct) ? "Add to cart" : "Go to cart"} */}
           Add to cart
         </button>
+        {console.log(selectedProduct?._id, "jk")}
         <button
           // disabled={cartLoading}
           // onClick={() => wishlistHandler(selectedProduct)}

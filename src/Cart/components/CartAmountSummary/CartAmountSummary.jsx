@@ -29,7 +29,7 @@ import "./CartAmountSummary.css";
 //   );
 
 //   const isCouponApplied = couponSelected.length ? true : false;
-export const CartAmountSummary = () => {
+export const CartAmountSummary = ({ item }) => {
   // const placeOrderHandler = () => {
   //   dispatch({
   //     type: "SET_ORDER",
@@ -51,7 +51,7 @@ export const CartAmountSummary = () => {
       </div>
       <div className="discount-container">
         <span>Discount: </span>
-        <span>-₹ 10,400 - ₹ 2480</span>
+        <span>₹ {item?.original_price} - ₹ 2480</span>
       </div>
       {/* {isCouponApplied && (
         <div className="discount-container">
@@ -62,7 +62,7 @@ export const CartAmountSummary = () => {
 
       <div className="discount-container">
         <span>Coupon Discount: </span>
-        <span> - ₹ 2480</span>
+        <span> ₹ 2480</span>
       </div>
 
       <div className="shipping-container">
@@ -71,14 +71,14 @@ export const CartAmountSummary = () => {
       </div>
       <div className="total">
         <span className="total-container">Total: </span>
-        <span>₹7920</span>
+        <span> ₹ {item?.original_price - "2480"}</span>
       </div>
 
       <div className="total-discount-container">
         <span>
-          You saved $
+          You saved ₹
           {/* {(totalOriginalPrice - totalDiscountedPriceAfterCoupon).toFixed(2)}{" "} */}
-          ₹ 2480
+          2480
         </span>
       </div>
       <Link to="/checkout">Place Order</Link>

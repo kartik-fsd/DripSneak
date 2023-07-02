@@ -237,6 +237,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Link from "@mui/material/Link";
 import { useData } from "../../contexts/DataProvider";
 import { useUserData } from "../../contexts/UserDataProvider";
+import { ClickAwayListener, Fade, Paper, Popper } from "@mui/material";
+import "./Navbar.css";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -277,9 +279,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
-const getActiveStyle = ({ isActive }) => {
-  return { color: isActive ? "white" : "" };
-};
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
@@ -289,11 +288,60 @@ const darkTheme = createTheme({
   },
 });
 
+const NotificationContainer = styled("div")(({ theme }) => ({
+  marginRight: "1rem",
+  [theme.breakpoints.down("sm")]: {
+    marginRight: "0.5rem",
+  },
+}));
+
+const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
+  padding: theme.spacing(1),
+  [theme.breakpoints.down("sm")]: {
+    padding: theme.spacing(2),
+  },
+}));
+
+const Title = styled(Typography)(({ theme }) => ({
+  fontSize: "1rem",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "0.875rem",
+  },
+}));
+
+const Message = styled(Typography)(({ theme }) => ({
+  marginTop: "0.5rem",
+  fontSize: "0.875rem",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "0.75rem",
+  },
+}));
+
 export default function Navbar() {
   const { dispatch } = useData();
   const navigate = useNavigate();
   let email = localStorage.getItem("user_email");
   console.log(email);
+
+  const notifications = [
+    {
+      id: 1,
+      title: "New Arrivals 🔥",
+      message: "Check out the latest shoe arrivals in our store!",
+    },
+    {
+      id: 2,
+      title: "Limited Stock 🔥",
+      message: " Hurry up! Limited stock available for your favorite shoes.",
+    },
+    {
+      id: 3,
+      title: "Flash Sale ⚡",
+      message:
+        "Get amazing discounts on selected shoe models for a limited time.",
+    },
+  ];
+
   // const { userDataState } = useUserData();
   // const totalProductsInCart = userDataState.cartProducts?.reduce(
   //   (acc, curr) => {
@@ -331,6 +379,18 @@ export default function Navbar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  const [anchor, setAnchor] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchor(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchor(null);
+  };
+  const [isModalOpen, setModalOpen] = React.useState(false);
+  const [isDropdownOpen, setDropdownOpen] = React.useState(false);
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
@@ -397,16 +457,41 @@ export default function Navbar() {
         <p>Cart</p>
       </MenuItem>
       <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
+        <div style={{ display: "flex" }}>
+          <IconButton
+            size="large"
+            aria-label="show notifications"
+            color="inherit"
+            onClick={() => setModalOpen(true)}
+          >
+            <Badge badgeContent={notifications.length} color="error">
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+          <p>Notificaton</p>
+
+          {isModalOpen && (
+            <div className="modal">
+              <div className="modal-content">
+                <span className="close" onClick={() => setModalOpen(false)}>
+                  &times;
+                </span>
+                <div className="notification-list">
+                  {notifications.map((notification) => (
+                    <div
+                      key={notification.id}
+                      onClick={handleClose}
+                      className="notification-item"
+                    >
+                      <h4>{notification.title}</h4>
+                      <p>{notification.message}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -427,15 +512,10 @@ export default function Navbar() {
     <Box
       sx={{
         flexGrow: 1,
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        zIndex: "10000",
       }}
     >
-      <ThemeProvider theme={darkTheme}>
-        <AppBar position="static">
+      <>
+        <AppBar position="static" sx={{ backgroundColor: "#000000" }}>
           <Toolbar>
             <IconButton
               size="large"
@@ -501,15 +581,40 @@ export default function Navbar() {
                   <ShoppingCartCheckoutIcon onClick={() => navigate("/cart")} />
                 </Badge>
               </IconButton>
-              <IconButton
-                size="large"
-                aria-label="show 17 new notifications"
-                color="inherit"
-              >
-                <Badge badgeContent={6} color="error">
-                  <NotificationsIcon />
-                </Badge>
-              </IconButton>
+              <div>
+                <IconButton
+                  size="large"
+                  aria-label="show notifications"
+                  color="inherit"
+                  onClick={() => setDropdownOpen(!isDropdownOpen)}
+                >
+                  <Badge badgeContent={notifications.length} color="error">
+                    <NotificationsIcon />
+                  </Badge>
+                </IconButton>
+                <div className="dropdown-container">
+                  {/* <button className="notification-button">
+                    <span className="notification-badge">
+                      {notifications.length}
+                    </span>
+                    <NotificationsIcon className="notification-icon" />
+                  </button> */}
+                  {isDropdownOpen && (
+                    <div className="dropdown-menu">
+                      {notifications.map((notification) => (
+                        <div
+                          key={notification.id}
+                          onClick={handleClose}
+                          className="dropdown-item"
+                        >
+                          <h4>{notification.title}</h4>
+                          <p>{notification.message}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
 
               <IconButton
                 size="large"
@@ -539,7 +644,7 @@ export default function Navbar() {
         </AppBar>
         {renderMobileMenu}
         {renderMenu}
-      </ThemeProvider>
+      </>
     </Box>
   );
 }

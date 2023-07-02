@@ -175,7 +175,7 @@ import Tilt from "react-parallax-tilt";
 import React from "react";
 
 import { useData } from "../../../contexts/DataProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getCategoryWiseProducts } from "../Filter/filter-functions/category";
 import { getRatedProducts } from "../Filter/filter-functions/ratings";
 import { getPricedProducts } from "../Filter/filter-functions/price";
@@ -211,6 +211,7 @@ export const ProductListingSection = () => {
   const pricedProducts = getPricedProducts(categoryProducts, price);
 
   const sortedProducts = getSortedProducts(pricedProducts, sort);
+  const navigate = useNavigate();
 
   return (
     <div className="product-card-container">
@@ -277,8 +278,9 @@ export const ProductListingSection = () => {
 
                 <div className="product-card-buttons">
                   <button
-                    //disabled={cartLoading}
-                    // onClick={() => addToCartHandler(product)}
+                    onClick={() => {
+                      navigate(`/cart/${product?._id}`);
+                    }}
                     className="cart-btn"
                   >
                     {/* {!isProductInCart(product) ? "Add To Cart" : "Go to Cart"} */}

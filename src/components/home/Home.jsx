@@ -3,6 +3,7 @@ import VideoPlayer from "./Video/VideopLayer";
 import { Section } from "./Section/Section";
 import { VideosSection } from "./Card/CradSection";
 import { CategoriesSection } from "./CategorySection/Category";
+import { Footer } from "../Footer/Footer";
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       <Section />
       <VideosSection />
       <CategoriesSection />
+      <Footer />
     </>
   );
 }

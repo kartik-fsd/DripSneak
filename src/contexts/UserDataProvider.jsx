@@ -29,13 +29,21 @@ export function UserProvider({ children }) {
     initialUserData
   );
 
-  const { auth } = useAuth();
+  // const { auth } = useAuth();
+  const [login, setLogin] = useState(false);
+  let email = localStorage.getItem("user_email");
+  let auth1 = localStorage.getItem("user_id");
+  useEffect(() => {
+    if (email) {
+      setLogin(true);
+    }
+  }, []);
 
   const navigate = useNavigate();
   const location = useLocation();
 
   const addToCartHandler = async (product) => {
-    if (auth.isAuth) {
+    if (login) {
       if (!product.is_stock) {
         toast.error(`Sorry, ${product.name} is not in stock.`);
       } else {
@@ -43,7 +51,7 @@ export function UserProvider({ children }) {
           try {
             setCartLoading(true);
             setError("");
-            const response = await addToCartService(product, auth.token);
+            const response = await addToCartService(product, auth1);
             if (response.status === 201) {
               setCartLoading(false);
               toast.success(`${product.name} added to cart successfully!`);
@@ -66,16 +74,16 @@ export function UserProvider({ children }) {
   };
 
   const addToWishlistHandler = async (product) => {
-    const response = await addToWishlistService(product, auth.token);
+    const response = await addToWishlistService(product, auth1);
     dispatch({ type: "SET_WISHLIST", payload: response.data.wishlist });
   };
 
   const getCartProducts = async () => {
     try {
-      if (auth.isAuth) {
+      if (login) {
         setCartLoading(true);
         setError("");
-        const response = await getCartService(auth.token);
+        const response = await getCartService(auth1);
         if (response.status === 200) {
           dispatch({ type: "SET_CART", payload: response.data.cart });
           setCartLoading(false);
@@ -93,7 +101,7 @@ export function UserProvider({ children }) {
     try {
       setCartLoading(true);
       setError("");
-      const response = await removeFromCartService(product._id, auth.token);
+      const response = await removeFromCartService(product._id, auth1);
       if (response.status === 200) {
         setCartLoading(false);
         toast.success(`${product.name} successfully removed from the cart `);
@@ -112,7 +120,7 @@ export function UserProvider({ children }) {
       setCartLoading(true);
       setError("");
       if (type === "decrement" && product.qty === 1) {
-        const response = await removeFromCartService(product._id, auth.token);
+        const response = await removeFromCartService(product._id, auth1);
         if (response.status === 200) {
           setCartLoading(false);
           toast.success(`${product.name} succesfully removed from the cart`);
@@ -121,7 +129,7 @@ export function UserProvider({ children }) {
       } else {
         const response = await changeQuantityCartService(
           product._id,
-          auth.token,
+          auth1,
           type
         );
 
@@ -141,12 +149,12 @@ export function UserProvider({ children }) {
   };
 
   const wishlistHandler = async (product) => {
-    if (auth.isAuth) {
+    if (login) {
       if (!isProductInWishlist(product)) {
         try {
           setCartLoading(true);
           setError("");
-          const response = await addToWishlistService(product, auth.token);
+          const response = await addToWishlistService(product, auth1);
           if (response.status === 201) {
             setCartLoading(false);
             toast.success(
@@ -164,10 +172,7 @@ export function UserProvider({ children }) {
         try {
           setCartLoading(true);
           setError("");
-          const response = await removeFromWishlistService(
-            product._id,
-            auth.token
-          );
+          const response = await removeFromWishlistService(product._id, auth1);
           if (response.status === 200) {
             setCartLoading(false);
             toast.success(
@@ -190,7 +195,7 @@ export function UserProvider({ children }) {
 
   const getWishlistProducts = async () => {
     try {
-      const response = await getWishlistService(auth.token);
+      const response = await getWishlistService(auth1);
       dispatch({ type: "SET_WISHLIST", payload: response.data.wishlist });
     } catch (error) {
       console.error(error);
@@ -201,7 +206,7 @@ export function UserProvider({ children }) {
     try {
       setCartLoading(true);
       setError("");
-      const response = await removeFromWishlistService(product._id, auth.token);
+      const response = await removeFromWishlistService(product._id, auth1);
       if (response.status === 200) {
         setCartLoading(false);
         toast.success(
@@ -271,7 +276,7 @@ export function UserProvider({ children }) {
   const getAddressList = async () => {
     try {
       setCartLoading(true);
-      const response = await getAddressListService(auth.token);
+      const response = await getAddressListService(auth1);
       if (response.status === 200) {
         setCartLoading(false);
         dispatch({
@@ -291,7 +296,7 @@ export function UserProvider({ children }) {
     getWishlistProducts();
     getCartProducts();
     getAddressList();
-  }, [auth]);
+  }, [auth1]);
 
   return (
     <UserDataContext.Provider

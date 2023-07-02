@@ -11,7 +11,6 @@ function App() {
     <>
       <Navbar />
       {loading && <Loader />}
-      <div style={{ marginTop: "50px" }}></div>
       <NavRoutes />
     </>
   );

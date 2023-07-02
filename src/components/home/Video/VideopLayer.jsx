@@ -5,6 +5,7 @@ import CardCover from "@mui/joy/CardCover";
 import CardContent from "@mui/joy/CardContent";
 import Typography from "@mui/joy/Typography";
 import video from "/assets/videos/video-3.mp4";
+import production from "/assets/videos/production.mp4";
 import "./video.css";
 import { useNavigate } from "react-router-dom";
 export default function BasicCard() {
@@ -41,7 +42,7 @@ export default function BasicCard() {
           muted
           poster="https://assets.codepen.io/6093409/river.jpg"
         >
-          <source src={video} type="video/mp4" />
+          <source src={production} type="video/mp4" />
         </video>
         <div className="hero-text">
           <h1>Sneak into Extraordinary</h1>
