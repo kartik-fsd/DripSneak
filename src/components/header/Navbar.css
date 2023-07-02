@@ -103,4 +103,139 @@
       font-size: 32px;
     }
   }
-  
+
+
+/* .button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+.button {
+  --border-right: 4px;
+  border-left: 13px;;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #509072;
+  --fs-size: 1em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+} 
+ */
+ .button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+.button {
+  --border-right: 4px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #509072;
+  --fs-size: 1em;
+  letter-spacing: 5px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  -webkit-text-stroke: 1px var(--animation-color);
+  animation: animation-loop 3s infinite;
+}
+
+/* @keyframes animation-loop {
+  0% {
+    width: 0%;
+  }
+  20% {
+    width: 20%;
+    
+  }
+
+  40%{
+    width: 60%;
+   
+  }
+  60%{
+    width: 80%;
+   
+  }
+  80%{
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color));
+  }
+  100% {
+    width: 0%;
+  }
+} */
+@keyframes animation-loop {
+  0% {
+    width: 0%;
+  }
+  12.5% {
+    width: 25%;
+  }
+  25% {
+    width: 50%;
+  }
+  37.5% {
+    width: 75%;
+  }
+  50% {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color));
+  }
+  62.5% {
+    width: 75%;
+  }
+   75% {
+    width: 50%;
+  }
+  87.5% {
+    width: 25%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+

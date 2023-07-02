@@ -436,6 +436,24 @@ export default function Navbar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
+      <button
+        data-text="Awesome"
+        class="button"
+        onClick={() => {
+          scrollTo(0, 0);
+          navigate("product-listing");
+        }}
+        style={{
+          marginLeft: 5,
+          borderBottom: "1px solid black",
+          padding: 3,
+        }}
+      >
+        <span class="actual-text">&nbsp;SNEAKERS&nbsp;</span>
+        <span class="hover-text" aria-hidden="true" style={{}}>
+          &nbsp;Explore&nbsp;
+        </span>
+      </button>
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
@@ -559,9 +577,27 @@ export default function Navbar() {
             </Search>
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              <Typography sx={{ padding: "12px", cursor: "pointer" }}>
+              {/* <Typography
+                className="button-54"
+                sx={{ padding: "12px", cursor: "pointer" }}
+                
+              >
                 Explore
-              </Typography>
+              </Typography> */}
+              <button
+                data-text="Awesome"
+                class="button"
+                onClick={() => {
+                  scrollTo(0, 0);
+                  navigate("product-listing");
+                }}
+              >
+                <span class="actual-text">&nbsp;SNEAKERS&nbsp;</span>
+                <span class="hover-text" aria-hidden="true">
+                  &nbsp;Explore&nbsp;
+                </span>
+              </button>
+
               <IconButton
                 size="large"
                 aria-label="show 4 new mails"

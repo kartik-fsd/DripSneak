@@ -32,7 +32,7 @@ export default function BasicCard() {
       >
         <video
           style={{
-            width: "100%",
+            width: "100vw",
             height: "100%",
             objectFit: "cover",
             opacity: 0.5,
