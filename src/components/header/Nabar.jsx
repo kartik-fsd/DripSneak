@@ -411,7 +411,7 @@ export default function Navbar() {
     >
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
 
-      <NavLink to="/login" style={{ textDecoration: "none", color: "#FDFDFD" }}>
+      <NavLink to="/login" style={{ textDecoration: "none", color: "#202020" }}>
         <MenuItem onClick={handleMenuClose} sx={{}}>
           {email != null ? "Logout" : " Login"}
         </MenuItem>
