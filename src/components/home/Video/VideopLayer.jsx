@@ -1,10 +1,6 @@
 import * as React from "react";
 import Box from "@mui/joy/Box";
 import Card from "@mui/joy/Card";
-import CardCover from "@mui/joy/CardCover";
-import CardContent from "@mui/joy/CardContent";
-import Typography from "@mui/joy/Typography";
-import video from "/assets/videos/video-3.mp4";
 import production from "/assets/videos/production.mp4";
 import "./video.css";
 import { useNavigate } from "react-router-dom";
