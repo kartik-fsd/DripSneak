@@ -6,7 +6,8 @@ export const products = [
     description:
       "These premium leather sneakers embody urban sophistication with their sleek design, high-quality craftsmanship, and attention to detail.",
     discounted_price: 8019,
-    img: "/assets/images/products-images/image-kids-1.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393457/image-kids-1_yviesq.png",
+
     is_stock: false,
     liked: false,
     name: "Vanguard Elite",
@@ -22,7 +23,7 @@ export const products = [
     description:
       "These urban high-top sneakers feature a contemporary silhouette, luxurious materials, and impeccable stitching, making them a stylish choice for fashion-forward individuals.",
     discounted_price: 8019,
-    img: "/assets/images/products-images/image-kids-2.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393494/image-kids-2_z5xiyu.png",
     is_stock: true,
     liked: false,
     name: "Nova Pro X",
@@ -38,7 +39,7 @@ export const products = [
     description:
       "Combining cutting-edge technology with urban style, these running shoes feature advanced cushioning, breathable mesh, and a sleek, streamlined design.",
     discounted_price: 6399,
-    img: "/assets/images/products-images/image-kids-3.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393494/image-kids-3_lzzbon.png",
     is_stock: true,
     liked: false,
     name: "Ascend TechFit",
@@ -54,7 +55,7 @@ export const products = [
     description:
       "Made from supple, premium leather, these loafers exude elegance with their minimalist urban aesthetic and effortless slip-on design.",
     discounted_price: 18019,
-    img: "/assets/images/products-images/image-kids-4.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393494/image-kids-4_mgbp1v.png",
     is_stock: true,
     liked: false,
     name: "Velocity Prime",
@@ -70,7 +71,7 @@ export const products = [
     description:
       "These urban boots are crafted from luxurious suede and boast a modern silhouette, making them a versatile and stylish choice for any occasion.",
     discounted_price: 28019,
-    img: "/assets/images/products-images/image-kids-5.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393494/image-kids-5_gbcypt.png",
     is_stock: true,
     liked: false,
     name: "Equinox Maxima",
@@ -86,7 +87,7 @@ export const products = [
     description:
       "Designed for the fashion-conscious urbanite, these sneakers feature bold colors, unique patterns, and premium materials, adding an eye-catching element to any outfit.",
     discounted_price: 7209,
-    img: "/assets/images/products-images/image-kids-6.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393456/image-kids-6_c0kfdw.png",
     is_stock: true,
     liked: false,
     name: "Precision Optima",
@@ -102,7 +103,7 @@ export const products = [
     description:
       "These premium leather Chelsea boots offer a perfect blend of urban style and timeless elegance, with their sleek silhouette and comfortable fit.",
     discounted_price: 28019,
-    img: "/assets/images/products-images/image-kids-7.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393527/image-kids-7_ckccbg.png",
     is_stock: true,
     liked: false,
     name: "Apex Fusion X",
@@ -118,7 +119,7 @@ export const products = [
     description:
       "These urban slip-on sneakers combine fashion-forward design with premium materials, allowing for effortless style and comfort.",
     discounted_price: 48019,
-    img: "/assets/images/products-images/image-kids-8.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393538/image-kids-8_g0wzn3.png",
     is_stock: true,
     liked: false,
     name: "Quantum Impact",
@@ -134,7 +135,7 @@ export const products = [
     description:
       "Urban Desert Boots: Made from high-quality materials, these desert boots feature a rugged yet refined urban look, making them an ideal choice for the modern adventurer.",
     discounted_price: 58019,
-    img: "/assets/images/products-images/image-kids-9.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393538/image-kids-9_ebgquz.png",
     is_stock: true,
     liked: false,
     name: "Elevation Ultra",
@@ -150,7 +151,7 @@ export const products = [
     description:
       "These urban leather sandals embody simplicity and sophistication, with their clean lines, premium materials, and understated elegance.",
     discounted_price: 78019,
-    img: "/assets/images/products-images/image-kids-10.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393495/image-kids-10_f6kbfx.png",
     is_stock: true,
     liked: false,
     name: "Radiant Elite",
@@ -166,7 +167,7 @@ export const products = [
     description:
       "These premium Oxford shoes feature a modern twist on a classic design, with urban-inspired details and impeccable craftsmanship.",
     discounted_price: 28019,
-    img: "/assets/images/products-images/image-kids-11.png",
+    img: " https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393537/image-kids-11.png",
     is_stock: true,
     liked: false,
     name: "Ignite Pro X",
@@ -182,7 +183,7 @@ export const products = [
     description:
       "Combining urban aesthetics with a touch of edginess, these platform sneakers boast premium materials, unique textures, and a comfortable lift.",
     discounted_price: 88019,
-    img: "/assets/images/products-images/image-kids-12.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393495/image-kids-12_h0wpby.png",
     is_stock: true,
     liked: false,
     name: "Luminary Evo",
@@ -198,7 +199,7 @@ export const products = [
     description:
       "These urban leather loafers offer a refined and polished look, with their premium construction, sleek silhouette, and exquisite detailing.",
     discounted_price: 58019,
-    img: "/assets/images/products-images/image-kids-13.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393496/image-kids-13_apyl3r.png",
     is_stock: false,
     liked: false,
     name: "Velocity Boost",
@@ -214,7 +215,7 @@ export const products = [
     description:
       "These sneakers push the boundaries of urban footwear with their innovative materials, geometric patterns, and avant-garde design elements.",
     discounted_price: 88019,
-    img: "/assets/images/products-images/image-kids-14.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393496/image-kids-14_ltitck.png",
     is_stock: true,
     liked: false,
     name: "Synthesis Xcel",
@@ -230,7 +231,7 @@ export const products = [
     description:
       "These ankle boots feature a sleek urban silhouette, premium leather, and a statement zipper detail, adding a modern edge to any outfit.",
     discounted_price: 68019,
-    img: "/assets/images/products-images/image-kids-15.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393534/image-kids-15_hc2qk3.png",
     is_stock: false,
     liked: false,
     name: "Momentum Prime",
@@ -246,7 +247,7 @@ export const products = [
     description:
       "These urban sneakers combine breathable knit fabric with premium accents, offering a modern and comfortable footwear option.",
     discounted_price: 28019,
-    img: "/assets/images/products-images/image-kids-16.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393535/image-kids-16_syyor1.png",
     is_stock: true,
     liked: false,
     name: "Optimum Stride",
@@ -262,7 +263,7 @@ export const products = [
     description:
       "These brogues feature a blend of classic charm and urban style, with their intricate perforations, luxurious leather, and urban-inspired finishes.",
     discounted_price: 80199,
-    img: "/assets/images/products-images/image-kids-17.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393535/image-kids-17_gdjydw.png",
     is_stock: false,
     liked: false,
     name: "Empower Pro X",
@@ -278,7 +279,7 @@ export const products = [
     description:
       "Combining athletic functionality with urban aesthetics, these sneakers offer exceptional comfort, premium materials, and stylish design elements.",
     discounted_price: 118019,
-    img: "/assets/images/products-images/image-kids-18.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393496/image-kids-18_zuiqa5.png",
     is_stock: false,
     liked: false,
     name: "Elite Reactor",
@@ -294,7 +295,7 @@ export const products = [
     description:
       "These premium leather sneakers embody urban sophistication with their sleek design, high-quality craftsmanship, and attention to detail.",
     discounted_price: 8019,
-    img: "/assets/images/products-images/image-kids-19.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393460/image-kids-19_gtdfdz.png",
     is_stock: false,
     liked: false,
     name: "Catalyst Hyper",
@@ -310,7 +311,7 @@ export const products = [
     description:
       "These derbies embody urban sophistication with their clean lines, premium leather, and a modern twist on a timeless silhouette.",
     discounted_price: 69,
-    img: "/assets/images/products-images/image-kids-20.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393538/image-men-20_tzzf01.png",
     is_stock: true,
     liked: false,
     name: "Fusion Element",
@@ -326,7 +327,7 @@ export const products = [
     description:
       "These urban joggers combine sporty design elements with luxurious materials, creating a unique and stylish footwear option for urban explorers.",
     discounted_price: 80199,
-    img: "/assets/images/products-images/image-kids-21.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393538/image-men-21_kykjgu.png",
     is_stock: false,
     liked: false,
     name: "Triumph Elite",
@@ -342,7 +343,7 @@ export const products = [
     description:
       "These ballet flats feature soft, premium leather, a refined urban silhouette, and a comfortable fit, offering a chic and versatile choice for urban dwellers.",
     discounted_price: 58019,
-    img: "/assets/images/products-images/image-men-1.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393460/image-men-1_yngrkj.png",
     is_stock: true,
     liked: false,
     name: "Evolve Pro X",
@@ -358,7 +359,7 @@ export const products = [
     description:
       "Crafted from plush suede, these sneakers exude urban luxury with their refined silhouette, attention to detail, and superior comfort.",
     discounted_price: 18019,
-    img: "/assets/images/products-images/image-men-4.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393529/image-men-4_e3hrwy.png",
     is_stock: false,
     liked: false,
     name: "Innovate Optima",
@@ -374,7 +375,7 @@ export const products = [
     description:
       "Designed for urban explorers, these hiking boots feature a durable construction, rugged tread, and urban-inspired accents, ensuring both style and functionality.",
     discounted_price: 38019,
-    img: "/assets/images/products-images/image-men-5.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393529/image-men-5_lj58xj.png",
     is_stock: true,
     liked: false,
     name: "Phoenix Fusion",
@@ -390,7 +391,7 @@ export const products = [
     description:
       "These monk strap shoes redefine urban sophistication with their premium leather, sleek buckle closure, and contemporary silhouette.",
     discounted_price: 80199,
-    img: "/assets/images/products-images/image-men-6.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393459/image-men-6_vsp03o.png",
     is_stock: true,
     liked: false,
     name: "Turbo Impact",
@@ -406,7 +407,7 @@ export const products = [
     description:
       "These sandals combine urban style with warm-weather comfort, featuring a cushioned footbed, premium materials, and a trendy streetwear-inspired design.",
     discounted_price: 88019,
-    img: "/assets/images/products-images/image-men-7.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393530/image-men-7_sxqeeb.png",
     is_stock: false,
     liked: false,
     name: "Aether Ultra",
@@ -422,7 +423,7 @@ export const products = [
     description:
       "Perfect for summer, these slip-on espadrilles showcase an urban twist with their premium materials, jute-wrapped sole, and effortless style.",
     discounted_price: 18019,
-    img: "/assets/images/products-images/image-men-8.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393535/image-men-8_scpoae.png",
     is_stock: false,
     liked: false,
     name: "Precision Glide",
@@ -438,7 +439,7 @@ export const products = [
     description:
       "Blurring the lines between sneakers and boots, these hybrid shoes feature a sleek urban design, premium materials, and a comfortable fit.",
     discounted_price: 28019,
-    img: "/assets/images/products-images/image-men-9.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393535/image-men-9_cclciw.png",
     is_stock: true,
     liked: false,
     name: "Luminous Elite",
@@ -454,7 +455,7 @@ export const products = [
     description:
       "These Chelsea sneakers offer a unique blend of urban style and sporty appeal, featuring a slip-on design, premium materials, and a contemporary silhouette.",
     discounted_price: 48019,
-    img: "/assets/images/products-images/image-men-10.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393455/image-men-10_biwtds.png",
     is_stock: true,
     liked: false,
     name: "Surge Pro X",
@@ -470,7 +471,7 @@ export const products = [
     description:
       "These wingtip shoes exude urban elegance with their detailed broguing, premium leather, and a modern interpretation of a classic design.",
     discounted_price: 138019,
-    img: "/assets/images/products-images/image-men-11.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393527/image-men-11_samgvs.png",
     is_stock: true,
     liked: false,
     name: "Quantum Evo",
@@ -486,7 +487,7 @@ export const products = [
     description:
       "Combining sporty functionality with urban aesthetics, these sandals feature adjustable straps, cushioned footbeds, and a sleek design, perfect for on-the-go comfort.",
     discounted_price: 68019,
-    img: "/assets/images/products-images/image-men-12.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393527/image-men-12_jtuhxn.png",
     is_stock: true,
     liked: false,
     name: "Momentum Boost",
@@ -502,7 +503,7 @@ export const products = [
     description:
       "These low-top sneakers showcase a minimalist urban aesthetic with their clean lines, premium materials, and versatile color options.",
     discounted_price: 108019,
-    img: "/assets/images/products-images/image-men-13.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393527/image-men-13_qkof6z.png",
     is_stock: true,
     liked: false,
     name: "Harmony Xcel",
@@ -518,7 +519,7 @@ export const products = [
     description:
       "These derby boots offer a contemporary twist on a classic silhouette, combining premium leather, urban-inspired details, and a comfortable fit.",
     discounted_price: 28019,
-    img: "/assets/images/products-images/image-men-14.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393528/image-men-14_hm5zrm.png",
     is_stock: true,
     liked: false,
     name: "Propel Prime",
@@ -534,7 +535,7 @@ export const products = [
     description:
       "These lightweight slip-on shoes feature a breathable knit upper, flexible sole, and a modern urban design, providing comfort and style for everyday wear.",
     discounted_price: 8019,
-    img: "/assets/images/products-images/image-men-15.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393528/image-men-15_ibobk7.png",
     is_stock: false,
     liked: false,
     name: "Dynamo Stride",
@@ -550,7 +551,7 @@ export const products = [
     description:
       "These penny loafers exude urban sophistication with their polished leather, refined silhouette, and timeless style, suitable for both casual and formal occasions.",
     discounted_price: 80199,
-    img: "/assets/images/products-images/image-men-16.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393528/image-men-16_plunul.png",
     is_stock: false,
     liked: false,
     name: "Enigma Pro X",
@@ -566,7 +567,7 @@ export const products = [
     description:
       "These sneaker wedges combine urban chic with added height, featuring a concealed wedge heel, premium materials, and a fashion-forward design.",
     discounted_price: 158019,
-    img: "/assets/images/products-images/image-men-17.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393456/image-men-17_ajiahs.png",
     is_stock: true,
     liked: false,
     name: "Zenith Reactor",
@@ -582,7 +583,7 @@ export const products = [
     description:
       "Inspired by desert footwear, these sandals feature a blend of urban style and comfort, with premium materials, adjustable straps, and a cushioned footbed.",
     discounted_price: 158019,
-    img: "/assets/images/products-images/image-men-18.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393499/image-men-18_tffjvx.png",
     is_stock: true,
     liked: false,
     name: "Catalyst Hyperion",
@@ -598,7 +599,7 @@ export const products = [
     description:
       "Blending the elegance of oxford shoes with the comfort of sneakers, these urban sneakers offer a sleek design, premium materials, and versatile styling options.",
     discounted_price: 168019,
-    img: "/assets/images/products-images/image-men-19.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393467/image-men-19_n9sseo.png",
     is_stock: true,
     liked: false,
     name: "Fusion Prodigy",
@@ -614,7 +615,7 @@ export const products = [
     description:
       "These boat shoes boast an urban twist with their slip-on design, premium leather, and a non-slip sole, offering both style and functionality.",
     discounted_price: 178019,
-    img: "/assets/images/products-images/image-men-20.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393499/image-men-20_gelxtj.png",
     is_stock: true,
     liked: false,
     name: "Vanguard Accelerate",
@@ -630,7 +631,7 @@ export const products = [
     description:
       "These slip-on mules offer an effortless urban style with their premium materials, backless design, and a comfortable yet sophisticated look.",
     discounted_price: 138019,
-    img: "/assets/images/products-images/image-men-21.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393538/image-men-21_kykjgu.png",
     is_stock: true,
     liked: false,
     name: "Nova Ignition",
@@ -646,7 +647,7 @@ export const products = [
     description:
       "These wingtip boots combine urban edge with classic details, featuring premium leather, brogue accents, and a sturdy construction for all-day comfort.",
     discounted_price: 188019,
-    img: "/assets/images/products-images/image-men-22.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393537/image-men-22_ohmduh.png",
     is_stock: true,
     liked: false,
     name: "Ascend Velocity",
@@ -662,7 +663,7 @@ export const products = [
     description:
       "These sock-style sneakers redefine urban footwear with their sleek silhouette, stretch-knit fabric, and contemporary design elements.",
     discounted_price: 180199,
-    img: "/assets/images/products-images/image-men-23.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393537/image-men-23_mseede.png",
     is_stock: true,
     liked: false,
     name: "Velocity Quantum",
@@ -678,7 +679,7 @@ export const products = [
     description:
       "These platform sneakers make a bold urban statement with their chunky sole, premium materials, and a fashion-forward design that stands out from the crowd.",
     discounted_price: 208019,
-    img: "/assets/images/products-images/image-men-24.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393537/image-men-24_md8dfo.png",
     is_stock: true,
     liked: false,
     name: "Equinox Dynamo",
@@ -694,7 +695,7 @@ export const products = [
     description:
       "These slingback flats offer a modern urban twist with their sleek silhouette, premium materials, and a comfortable yet chic design that pairs well with any outfit.",
     discounted_price: 128019,
-    img: "/assets/images/products-images/image-men-25.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393536/image-men-25_wfofst.png",
     is_stock: false,
     liked: false,
     name: "Precision Apex",
@@ -710,7 +711,7 @@ export const products = [
     description:
       "These chukka boots feature urban-inspired details, such as premium leather, contrasting stitching, and a versatile design suitable for both casual and dressier occasions.",
     discounted_price: 80199,
-    img: "/assets/images/products-images/image-men-26.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393537/image-men-26_gav9nw.png",
     is_stock: false,
     liked: false,
     name: "Apex Quantum X",
@@ -726,7 +727,7 @@ export const products = [
     description:
       "These slip-on sandals combine urban flair with warm-weather comfort, featuring premium materials, a cushioned footbed, and a minimalist yet stylish design.",
     discounted_price: 138019,
-    img: "/assets/images/products-images/image-men-27.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393537/image-men-27_zooy8v.png",
     is_stock: true,
     liked: false,
     name: "Quantum Velocity",
@@ -742,7 +743,7 @@ export const products = [
     description:
       "These wedge ankle boots elevate your urban style with their sleek silhouette, premium materials, and a comfortable wedge heel that adds height and sophistication.",
     discounted_price: 80199,
-    img: "/assets/images/products-images/image-men-28.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393529/image-men-28_swsell.png",
     is_stock: true,
     liked: false,
     name: "Elevation Dynamo X",
@@ -758,7 +759,7 @@ export const products = [
     description:
       "These sneaker booties fuse urban edge with a sporty vibe, featuring a high-top silhouette, premium materials, and bold design elements for a standout look.",
     discounted_price: 88019,
-    img: "/assets/images/products-images/image-men-29.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393528/image-men-29_prja4e.png",
     is_stock: true,
     liked: false,
     name: "Radiant Momentum",
@@ -774,7 +775,7 @@ export const products = [
     description:
       "These driving moccasins offer a refined urban style with their premium leather, comfortable fit, and a versatile design suitable for both casual and dressier occasions.",
     discounted_price: 58019,
-    img: "/assets/images/products-images/image-men-30.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393537/image-men-30_ounfbw.png",
     is_stock: true,
     liked: false,
     name: "Ignite Precision",
@@ -790,7 +791,7 @@ export const products = [
     description:
       "These slip-on loafers embody simplicity and urban sophistication, featuring clean lines, premium materials, and a sleek design that effortlessly elevates any outfit.",
     discounted_price: 58019,
-    img: "/assets/images/products-images/image-men-31.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393502/image-men-31_vxocye.png",
     is_stock: true,
     liked: false,
     name: "Luminary Synthesis",
@@ -806,7 +807,7 @@ export const products = [
     description:
       "These platform sandals exude urban chic with their elevated sole, premium materials, and a trendy design that adds a fashionable touch to your summer wardrobe.",
     discounted_price: 38019,
-    img: "/assets/images/products-images/image-men-32.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393537/image-men-32_uxwawq.png",
     is_stock: false,
     liked: false,
     name: "Velocity Momentum X",
@@ -822,7 +823,7 @@ export const products = [
     description:
       "These Chelsea sneakers blend urban style with athletic elements, featuring premium leather, elastic side panels, and a sporty yet sophisticated design.",
     discounted_price: 7209,
-    img: "/assets/images/products-images/image-men-33.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393538/image-men-34_kb7mic.png",
     is_stock: false,
     liked: false,
     name: "Synthesis Optimum",
@@ -838,7 +839,7 @@ export const products = [
     description:
       "These suede driving shoes combine urban sophistication with a touch of casual style, featuring premium suede, comfortable fit, and a versatile design.",
     discounted_price: 48019,
-    img: "/assets/images/products-images/image-women-1.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393462/image-women-1_vjjhgv.png",
     is_stock: true,
     liked: false,
     name: "Optimum Elite",
@@ -854,7 +855,7 @@ export const products = [
     description:
       "These high-top sneakers showcase a modern urban aesthetic with their breathable knit fabric, premium materials, and a streetwear-inspired design that stands out.",
     discounted_price: 8019,
-    img: "/assets/images/products-images/image-women-2.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393535/image-women-2_afilsl.png",
     is_stock: true,
     liked: false,
     name: "Empower Catalyst",
@@ -870,7 +871,7 @@ export const products = [
     description:
       "These gladiator sandals offer a bold urban look with their premium leather construction, multiple straps, and a stylish lace-up design that adds a trendy edge to your outfit.",
     discounted_price: 118019,
-    img: "/assets/images/products-images/image-women-4.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393533/image-women-4_wgqgoe.png",
     is_stock: true,
     liked: false,
     name: "Catalyst Apex X",
@@ -886,7 +887,7 @@ export const products = [
     description:
       "These slip-on oxfords combine urban sophistication with ease of wear, featuring premium leather, a sleek silhouette, and a convenient slip-on design for a polished yet effortless look.",
     discounted_price: 168019,
-    img: "/assets/images/products-images/image-women-5.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393503/image-women-5_neh8eb.png",
     is_stock: true,
     liked: false,
     name: "Fusion Quantum",
@@ -902,7 +903,7 @@ export const products = [
     description:
       "These platform oxford shoes elevate your urban style with their chunky sole, premium materials, and a contemporary design that adds height and fashion-forward appeal.",
     discounted_price: 80199,
-    img: "/assets/images/products-images/image-women-6.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393533/image-women-6_qefx7c.png",
     is_stock: true,
     liked: false,
     name: "Triumph Ignite",
@@ -918,7 +919,7 @@ export const products = [
     description:
       "These suede sneaker boots blend the versatility of sneakers with the warmth and style of boots, featuring premium suede, a mid-top silhouette, and a trendy urban design.",
     discounted_price: 7209,
-    img: "/assets/images/products-images/image-women-7.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393504/image-women-7_dwadx9.png",
     is_stock: true,
     liked: false,
     name: "Evolve Luminary",
@@ -934,7 +935,7 @@ export const products = [
     description:
       "These moccasin sneakers combine the comfort of moccasins with the urban style of sneakers, featuring premium leather, a sporty silhouette, and a versatile design suitable for various occasions.",
     discounted_price: 80199,
-    img: "/assets/images/products-images/image-women-9.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393532/image-women-9_iqohlw.png",
     is_stock: false,
     liked: false,
     name: "Accelerate Equinox",
@@ -950,7 +951,7 @@ export const products = [
     description:
       " These T-strap sandals showcase a modern urban aesthetic with their premium materials, adjustable straps, and a stylish design that adds a touch of sophistication to your warm-weather looks.",
     discounted_price: 148019,
-    img: "/assets/images/products-images/image-women-10.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393503/image-women-10_zkbo8y.png",
     is_stock: false,
     liked: false,
     name: "Innovate Precision X",
@@ -966,7 +967,7 @@ export const products = [
     description:
       "These Chelsea boots exude urban coolness with their premium leather, studded accents, and a sleek silhouette that effortlessly blends style and attitude.",
     discounted_price: 128019,
-    img: "/assets/images/products-images/image-women-11.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393504/image-women-11_tbjyng.png",
     is_stock: true,
     liked: false,
     name: "Phoenix Apex",
@@ -982,7 +983,7 @@ export const products = [
     description:
       "These slip-on sneaker mules offer a chic and effortless urban style with their premium materials, backless design, and a modern twist on a classic sneaker look.",
     discounted_price: 108019,
-    img: "/assets/images/products-images/image-women-12.png",
+    img: "    https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393537/image-women-12.png",
     is_stock: true,
     liked: false,
     name: "Turbo Quantum X",
@@ -998,7 +999,7 @@ export const products = [
     description:
       "These slingback pumps elevate your urban elegance with their premium leather, sleek silhouette, and a comfortable heel height that adds sophistication to your outfits.",
     discounted_price: 80199,
-    img: "/assets/images/products-images/image-women-13.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393532/image-women-12_reeqww.png",
     is_stock: true,
     liked: false,
     name: "Aether Elevation",
@@ -1014,7 +1015,7 @@ export const products = [
     description:
       "These sneaker boots combine the ruggedness of hiking boots with the urban appeal of sneakers, featuring durable materials, a grippy outsole, and a sporty design perfect for urban adventures.",
     discounted_price: 38019,
-    img: "/assets/images/products-images/image-women-14.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393530/image-women-14_kyhdka.png",
     is_stock: true,
     liked: false,
     name: "Precision Surge",
@@ -1030,7 +1031,7 @@ export const products = [
     description:
       "These slide sandals embody minimalist urban style with their premium leather, clean lines, and a simple yet refined design that effortlessly complements any outfit.",
     discounted_price: 28019,
-    img: "/assets/images/products-images/image-women-15.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393529/image-women-15_afrpri.png",
     is_stock: false,
     liked: false,
     name: "Luminous Momentum X",
@@ -1046,7 +1047,7 @@ export const products = [
     description:
       "These wedge sneakers add a touch of urban glamour with their metallic accents, premium materials, and a comfortable wedge heel that adds height and style.",
     discounted_price: 18019,
-    img: "/assets/images/products-images/image-women-16.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393530/image-women-16_iqb0ph.png",
     is_stock: true,
     liked: false,
     name: "Surge Optimum",
@@ -1062,7 +1063,7 @@ export const products = [
     description:
       "These moto boots exude urban edge with their rugged leather construction, buckle accents, and a sturdy design that combines style with durability.",
     discounted_price: 180199,
-    img: "/assets/images/products-images/image-women-18.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393536/image-women-18_ahsgzh.png",
     is_stock: true,
     liked: false,
     name: "Momentum Elite",
@@ -1078,7 +1079,7 @@ export const products = [
     description:
       "These cutout booties offer a trendy urban look with their unique design, premium materials, and a modern silhouette that adds a fashionable touch to your footwear collection.",
     discounted_price: 138019,
-    img: "/assets/images/products-images/image-women-19.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393505/image-women-19_aancj2.png",
     is_stock: true,
     liked: false,
     name: "Harmony Catalyst",
@@ -1094,7 +1095,7 @@ export const products = [
     description:
       "These Oxford flats offer a stylish urban twist with their premium materials, lace-up closure, and a sleek silhouette that adds a touch of sophistication to any outfit.",
     discounted_price: 188019,
-    img: "/assets/images/products-images/image-women-22.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393462/image-women-22_a1j6ij.png",
     is_stock: false,
     liked: false,
     name: "Enigma Nova X",
@@ -1110,7 +1111,7 @@ export const products = [
     description:
       "These sock booties showcase a modern urban aesthetic with their stretchy knit fabric, snug fit, and a sleek design that hugs your ankles for a trendy and comfortable look.",
     discounted_price: 8019,
-    img: "/assets/images/products-images/image-women-23.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393505/image-women-23_u3hbuf.png",
     is_stock: true,
     liked: false,
     name: "Zenith Ascend",
@@ -1126,7 +1127,7 @@ export const products = [
     description:
       "These tassel loafers exude urban charm with their premium leather, classic silhouette, and stylish tassel detailing, making them a versatile choice for both casual and formal occasions.",
     discounted_price: 8019,
-    img: "/assets/images/products-images/image-women-24.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393466/image-women-24_p6u0hf.png",
     is_stock: true,
     liked: false,
     name: "Catalyst Velocity X",
@@ -1142,7 +1143,7 @@ export const products = [
     description:
       "These platform sandals elevate your urban style with their chunky sole, premium materials, and a trendy design that adds height and fashion-forward flair to your summer wardrobe.",
     discounted_price: 118019,
-    img: "/assets/images/products-images/image-women-25.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393505/image-women-25_yl6irj.png",
     is_stock: true,
     liked: false,
     name: "Fusion Equinox",
@@ -1158,7 +1159,7 @@ export const products = [
     description:
       "These studded sneakers offer an edgy urban vibe with their premium materials, metallic stud accents, and a unique design that adds a rebellious touch to your footwear collection.",
     discounted_price: 80199,
-    img: "/assets/images/products-images/image-women-26.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393534/image-women-26_nuegk2.png",
     is_stock: true,
     liked: false,
     name: "Vanguard Precision",
@@ -1174,7 +1175,7 @@ export const products = [
     description:
       "These lace-up booties combine urban chic with a touch of ruggedness, featuring premium leather, a stacked heel, and a versatile design that pairs well with various outfits.",
     discounted_price: 178019,
-    img: "/assets/images/products-images/image-women-27.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393534/image-women-27_rebam6.png",
     is_stock: true,
     liked: false,
     name: "Nova Apex X",
@@ -1190,7 +1191,7 @@ export const products = [
     description:
       "These suede espadrilles showcase a modern urban aesthetic with their premium materials, jute-wrapped sole, and a stylish design that effortlessly blends comfort and style.",
     discounted_price: 158019,
-    img: "/assets/images/products-images/image-women-28.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393458/image-women-28_cy4edd.png",
     is_stock: true,
     liked: false,
     name: "Ascend Quantum",
@@ -1206,7 +1207,7 @@ export const products = [
     description:
       "These chunky heel mules offer an urban flair with their premium materials, comfortable block heel, and a contemporary design that adds a trendy touch to your footwear collection.",
     discounted_price: 78019,
-    img: "/assets/images/products-images/image-women-29.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393506/image-women-29_xjefdl.png",
     is_stock: true,
     liked: false,
     name: "Velocity Triumph",
@@ -1222,7 +1223,7 @@ export const products = [
     description:
       "These ballet flats exude urban sophistication with their premium leather, refined silhouette, and a timeless design that complements both casual and dressier looks.",
     discounted_price: 48019,
-    img: "/assets/images/products-images/image-women-30.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393506/image-women-30_k5uoco.png",
     is_stock: false,
     liked: false,
     name: "Equinox Evolve",
@@ -1238,7 +1239,7 @@ export const products = [
     description:
       "These slip-on sneaker boots combine the ease of slip-on shoes with the style of boots, featuring premium materials, a mid-top silhouette, and a fashion-forward design that effortlessly elevates your urban outfits.",
     discounted_price: 28019,
-    img: "/assets/images/products-images/image-women-31.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393507/image-women-31_qq9ojq.png",
     is_stock: true,
     liked: false,
     name: "Precision Stellar X",

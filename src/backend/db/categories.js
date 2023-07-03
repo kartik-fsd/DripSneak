@@ -1,23 +1,19 @@
-import { v4 as uuid } from "uuid";
-import kid from "/assets/images/category-images/hero-image-kids-1.png";
-import men from "/assets/images/category-images/hero-image-men-1.png";
-import women from "/assets/images/category-images/hero-image-women-1.png";
 export const categories = [
   {
     _id: "a",
     categoryName: "Men",
-    img: men,
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393527/hero-image-men-1_xchya3.png",
   },
 
   {
     _id: "b",
     categoryName: "Women",
-    img: women,
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393527/hero-image-women-1_xsf3p1.png",
   },
 
   {
     _id: "c",
     categoryName: "Kid",
-    img: kid,
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393526/hero-image-kids-1_ltxcsq.png",
   },
 ];

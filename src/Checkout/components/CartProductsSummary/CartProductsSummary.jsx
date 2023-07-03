@@ -1,8 +1,6 @@
 import "./CartProductsSummary.css";
 
 import React from "react";
-//import { useUserData } from "../../../../contexts/UserDataProvider";
-import img from "/assets/images/products-images/image-kids-3.png";
 export const CartProductsSummary = () => {
   // const { userDataState } = useUserData();
   return (
@@ -12,7 +10,10 @@ export const CartProductsSummary = () => {
         {/* {userDataState.cartProducts?.map(
           ({ id, img, name, qty, discounted_price }) => ( */}
         <div className="ordered-product-card">
-          <img src={img} alt="Ascend TechFit" />
+          <img
+            src="https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393528/image-kids-3_qnf6pz.png"
+            alt="Ascend TechFit"
+          />
           <span>
             <span>Ascend TechFit - </span>
             <span>1</span>

@@ -5,7 +5,6 @@ import { AiFillHeart } from "react-icons/ai";
 import "./CartListing.css";
 
 // import { useUserData } from "../../../../contexts/UserDataProvider";
-import img from "/assets/images/products-images/image-kids-3.png";
 
 export const CartListing = ({ item }) => {
   // const {

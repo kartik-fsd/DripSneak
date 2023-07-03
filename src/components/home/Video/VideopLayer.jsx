@@ -1,7 +1,6 @@
 import * as React from "react";
 import Box from "@mui/joy/Box";
 import Card from "@mui/joy/Card";
-import production from "/assets/videos/production.mp4";
 import "./video.css";
 import { useNavigate } from "react-router-dom";
 export default function BasicCard() {
@@ -38,7 +37,10 @@ export default function BasicCard() {
           muted
           poster="https://assets.codepen.io/6093409/river.jpg"
         >
-          <source src={production} type="video/mp4" />
+          <source
+            src="https://res.cloudinary.com/dnv5dhp9h/video/upload/v1688393540/production_nmcrex.mp4"
+            type="video/mp4"
+          />
         </video>
         <div className="hero-text">
           <h1>Sneak into Extraordinary</h1>

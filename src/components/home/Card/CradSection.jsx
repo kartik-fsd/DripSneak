@@ -2,10 +2,6 @@ import React from "react";
 import ReactPlayer from "react-player";
 import "./CradSection.css";
 import Tilt from "react-parallax-tilt";
-import video from "/assets/videos/hero-video-1.mp4";
-import video2 from "/assets/videos/hero-video-2.mp4";
-import video3 from "/assets/videos/hero-video-3.mp4";
-import video4 from "/assets/videos/hero-video-4.mp4";
 import { useNavigate } from "react-router-dom";
 
 export const VideosSection = () => {
@@ -19,7 +15,7 @@ export const VideosSection = () => {
               scrollTo(0, 0);
               navigate("/product-details/26");
             }}
-            url={video}
+            url="https://res.cloudinary.com/dnv5dhp9h/video/upload/v1688393540/hero-video-1_gtwlap.mp4"
             playing
             playbackRate={1.15}
             muted
@@ -40,7 +36,7 @@ export const VideosSection = () => {
               scrollTo(0, 0);
               navigate("/product-details/39");
             }}
-            url={video2}
+            url="https://res.cloudinary.com/dnv5dhp9h/video/upload/v1688393539/hero-video-2_v9qw0s.mp4"
             playing
             playbackRate={1.6}
             muted
@@ -58,7 +54,7 @@ export const VideosSection = () => {
         <Tilt transitionSpeed={1000} scale={1.07} className="video-card">
           <ReactPlayer
             onClick={() => navigate("/product-details/50")}
-            url={video3}
+            url="https://res.cloudinary.com/dnv5dhp9h/video/upload/v1688393540/hero-video-3_tkr6bl.mp4"
             playing
             playbackRate={2.8}
             muted
@@ -80,7 +76,7 @@ export const VideosSection = () => {
               scrollTo(0, 0);
               navigate("/product-details/76");
             }}
-            url={video4}
+            url="https://res.cloudinary.com/dnv5dhp9h/video/upload/v1688393539/hero-video-4_nfmntl.mp4"
             playing
             playbackRate={1}
             muted

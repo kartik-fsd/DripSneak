@@ -438,7 +438,7 @@ export default function Navbar() {
     >
       <button
         data-text="Awesome"
-        class="button"
+        className="button"
         onClick={() => {
           scrollTo(0, 0);
           navigate("product-listing");
@@ -449,8 +449,8 @@ export default function Navbar() {
           padding: 3,
         }}
       >
-        <span class="actual-text">&nbsp;SNEAKERS&nbsp;</span>
-        <span class="hover-text" aria-hidden="true" style={{}}>
+        <span className="actual-text">&nbsp;SNEAKERS&nbsp;</span>
+        <span className="hover-text" aria-hidden="true" style={{}}>
           &nbsp;Explore&nbsp;
         </span>
       </button>
@@ -586,14 +586,14 @@ export default function Navbar() {
               </Typography> */}
               <button
                 data-text="Awesome"
-                class="button"
+                className="button"
                 onClick={() => {
                   scrollTo(0, 0);
                   navigate("product-listing");
                 }}
               >
-                <span class="actual-text">&nbsp;SNEAKERS&nbsp;</span>
-                <span class="hover-text" aria-hidden="true">
+                <span className="actual-text">&nbsp;SNEAKERS&nbsp;</span>
+                <span className="hover-text" aria-hidden="true">
                   &nbsp;Explore&nbsp;
                 </span>
               </button>
