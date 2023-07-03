@@ -167,7 +167,7 @@ export const products = [
     description:
       "These premium Oxford shoes feature a modern twist on a classic design, with urban-inspired details and impeccable craftsmanship.",
     discounted_price: 28019,
-    img: " https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393537/image-kids-11.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393533/image-kids-11_youzox.png",
     is_stock: true,
     liked: false,
     name: "Ignite Pro X",
@@ -999,7 +999,7 @@ export const products = [
     description:
       "These slingback pumps elevate your urban elegance with their premium leather, sleek silhouette, and a comfortable heel height that adds sophistication to your outfits.",
     discounted_price: 80199,
-    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393532/image-women-12_reeqww.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393531/image-women-13_zvtmdz.png",
     is_stock: true,
     liked: false,
     name: "Aether Elevation",
