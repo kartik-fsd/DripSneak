@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Home from "../components/home/Home";
 import { Route, Routes } from "react-router-dom";
-import Login from "../components/auth/login";
+import Login from "../components/auth/login.jsx";
 import Registration from "../components/auth/Registration";
 import ForgotPassword from "../components/auth/Forgot";
 import { ProductListing } from "../ProductListing/ProductListing";
