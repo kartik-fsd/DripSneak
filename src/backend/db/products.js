@@ -983,7 +983,7 @@ export const products = [
     description:
       "These slip-on sneaker mules offer a chic and effortless urban style with their premium materials, backless design, and a modern twist on a classic sneaker look.",
     discounted_price: 108019,
-    img: "    https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393537/image-women-12.png",
+    img: "https://res.cloudinary.com/dnv5dhp9h/image/upload/v1688393532/image-women-12_reeqww.png",
     is_stock: true,
     liked: false,
     name: "Turbo Quantum X",
