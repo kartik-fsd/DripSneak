@@ -1,15 +1,6 @@
 # DripSneak
 
-# DadSneakers
-
-
-
-
-
-E-commerce website for a sneaker brand "DRPSNEAK" built in ReactJs. 
-
-
-
+E-commerce website for a sneaker brand "DRPSNEAK" built in ReactJs.
 
 ## Tech Stack
 
@@ -39,8 +30,6 @@ E-commerce website for a sneaker brand "DRPSNEAK" built in ReactJs.
 - Checkout
 - Responsive
 
-
-
 ## Run Locally
 
 Clone the project
@@ -67,8 +56,6 @@ Start the server
   npm dev start
 ```
 
-
 ## Authors
 
 - [@kartik-fsd](https://www.github.com/kartik-fsd)
-
