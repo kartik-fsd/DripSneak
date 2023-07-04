@@ -28,6 +28,7 @@ E-commerce website for a sneaker brand "DRPSNEAK" built in ReactJs.
 - Loading & Alerts
 - User Profile Page
 - Checkout
+  -Cloudify
 - Responsive
 
 ## Run Locally
