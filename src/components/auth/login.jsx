@@ -13,17 +13,34 @@ import {
   Typography,
   createTheme,
   ThemeProvider,
+  Alert,
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { users } from "../../backend/db/users";
 import { useNavigate } from "react-router-dom";
 import { useData } from "../../contexts/DataProvider";
+import Snackbar from "@mui/material/Snackbar";
 
 const defaultTheme = createTheme();
 
 export default function Login() {
   const { loading } = useData();
   const navigate = useNavigate();
+  const [open, setOpen] = React.useState(false);
+  const [stat, setStat] = React.useState("success");
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -35,8 +52,15 @@ export default function Login() {
       localStorage.setItem("user_email", details[0].email);
       localStorage.setItem("user_id", details[0]._id);
       localStorage.setItem("user_name", details[0].firstName);
-      navigate("/");
-      window.location.reload();
+      setStat("success");
+      handleClick();
+      setTimeout(() => {
+        navigate("/");
+        window.location.reload();
+      }, [2000]);
+    } else {
+      setStat("error");
+      handleClick();
     }
   };
   let refer = useRef();
@@ -118,6 +142,31 @@ export default function Login() {
             </Box>
           </Box>
         </Container>
+        <Snackbar
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+          anchorPosition={{ left: 10, top: 300 }}
+          open={open}
+          autoHideDuration={3000}
+          onClose={handleClose}
+        >
+          {stat == "success" ? (
+            <Alert
+              onClose={handleClose}
+              severity={"success"}
+              sx={{ width: "100%" }}
+            >
+              Logged In successfully 😊
+            </Alert>
+          ) : (
+            <Alert
+              onClose={handleClose}
+              severity={"error"}
+              sx={{ width: "100%" }}
+            >
+              Wrong password or username 😔
+            </Alert>
+          )}
+        </Snackbar>
       </ThemeProvider>
     )
   );

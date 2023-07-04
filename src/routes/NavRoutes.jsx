@@ -11,31 +11,19 @@ import { Cart } from "../Cart/Cart";
 import Checkout from "../checkout_order/checkout";
 
 export const NavRoutes = () => {
-  const [login, setLogin] = useState(false);
-  let email = localStorage.getItem("user_email");
-  useEffect(() => {
-    if (email) {
-      setLogin(true);
-    }
-  }, []);
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/product-listing" element={<ProductListing />} />
       <Route path="/product-details/:productId" element={<ProductDetails />} />
-      {login ? (
-        <>
-          <Route path="/cart/:productId" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-        </>
-      ) : (
-        <>
-          {/* <Route path="/product-details/product" element={<ProductDetails />} /> */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Registration />} />
-          <Route path="/forgot" element={<ForgotPassword />} />
-        </>
-      )}
+
+      <Route path="/cart/:productId" element={<Cart />} />
+      <Route path="/checkout" element={<Checkout />} />
+
+      {/* <Route path="/product-details/product" element={<ProductDetails />} /> */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Registration />} />
+      <Route path="/forgot" element={<ForgotPassword />} />
     </Routes>
   );
 };
