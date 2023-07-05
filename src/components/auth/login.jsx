@@ -57,7 +57,7 @@ export default function Login() {
       setTimeout(() => {
         navigate("/");
         window.location.reload();
-      }, [2000]);
+      }, [1500]);
     } else {
       setStat("error");
       handleClick();
