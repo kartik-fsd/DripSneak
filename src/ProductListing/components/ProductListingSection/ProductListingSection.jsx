@@ -172,7 +172,7 @@
 
 import "./ProductListingSection.css";
 import Tilt from "react-parallax-tilt";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { useData } from "../../../contexts/DataProvider";
 import { Link, useNavigate } from "react-router-dom";
@@ -212,6 +212,39 @@ export const ProductListingSection = () => {
 
   const sortedProducts = getSortedProducts(pricedProducts, sort);
   const navigate = useNavigate();
+
+  const [local, setLocal] = useState([])
+  const [wishData, setWishData] = useState([])
+
+  useEffect(() => {
+    const dataGet = JSON.parse(localStorage.getItem("cart_data")) 
+    setLocal(dataGet)
+    const dataWish = JSON.parse(localStorage.getItem("wishlist")) 
+    setWishData(dataWish)
+  }, [])
+  
+
+  const handleAddCart = (pro) => {
+    const dataGet = JSON.parse(localStorage.getItem("cart_data")) ?? []
+    const dataExists = [...dataGet,pro]
+    const unique = new Set(dataExists)
+    const spreadData = [...unique]
+    setLocal(spreadData)
+    
+    localStorage.setItem("cart_data",JSON.stringify(spreadData))
+  }
+
+  const handleAddWishlist = (pro) => {
+    const dataGet = JSON.parse(localStorage.getItem("wishlist")) ?? []
+    const dataExists = [...dataGet,pro]
+    const unique = new Set(dataExists)
+    const spreadData = [...unique]
+    setWishData(spreadData)
+    
+    localStorage.setItem("wishlist",JSON.stringify(spreadData))
+  }
+
+
 
   return (
     <div className="product-card-container">
@@ -277,15 +310,24 @@ export const ProductListingSection = () => {
                 </div>
 
                 <div className="product-card-buttons">
-                  <button
+                  {local.includes(_id) ? <button
                     onClick={() => {
-                      navigate(`/cart/${product?._id}`);
+                      navigate(`/cart/list`);
                     }}
                     className="cart-btn"
                   >
                     {/* {!isProductInCart(product) ? "Add To Cart" : "Go to Cart"} */}
+                    Go To Cart
+                  </button>:<button
+                    // onClick={() => {
+                    //   navigate(`/cart/${product?._id}`);
+                    // }}
+                    onClick={()=>handleAddCart(_id)} 
+                    className="cart-btn"
+                  >
+                    {/* {!isProductInCart(product) ? "Add To Cart" : "Go to Cart"} */}
                     Add To Cart
-                  </button>
+                  </button>}
                   <button
                     //onClick={() => wishlistHandler(product)}
                     className="wishlist-btn"
@@ -295,7 +337,8 @@ export const ProductListingSection = () => {
                     ) : (
                       <AiTwotoneHeart size={30} />
                     )} */}
-                    <AiTwotoneHeart size={30} />
+                    {wishData.includes(_id) ? <AiTwotoneHeart size={30} />:
+                    <AiOutlineHeart size={30} onClick={()=>handleAddWishlist(_id)}/>}
                   </button>
                 </div>
               </div>

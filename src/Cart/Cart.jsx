@@ -17,13 +17,19 @@ export const Cart = () => {
   // const { userDataState } = useUserData();
   // const navigate = useNavigate();
   const { loading } = useData();
-  const { productId } = useParams();
-  const [item, setItem] = useState({});
+  const [item, setItem] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [check, setCheck] = useState(false);
 
   useEffect(() => {
-    const data = products.find((id) => id._id == productId);
+    const local = JSON.parse(localStorage.getItem("cart_data"))
+    console.log(products)
+    const data = products.filter((id) => local.includes(id._id));
     setItem(data);
-  }, []);
+
+    const totalAmount = data.reduce((sum, item) => sum + (item.original_price - 2480), 0);
+    setTotal(totalAmount)
+  }, [check]);
 
   return (
     !loading && (
@@ -32,17 +38,24 @@ export const Cart = () => {
         <h1 className="page-heading" style={{ marginTop: 100 }}>
           Cart
         </h1>
-        <div className="cart-container">
-          <CartListing item={item} />
+        {item.map(it=>(<><div className="cart-container">
+          <CartListing item={it} setCheck={setCheck} check={check} />
           <div>
             {/* <Coupons
               couponSelected={couponSelected}
               setCouponSelected={setCouponSelected}
             /> */}
             {/* <CartAmountSummary couponSelected={couponSelected} /> */}
-            <CartAmountSummary item={item} />
+            <CartAmountSummary item={it} />
+            
           </div>
-        </div>
+        </div></>))}
+       
+        <div style={{  fontWeight: 700,fontSize: "35px",color: "black",display:"flex",justifyContent:"between" ,width:"100%"}}>
+       <div style={{width:"50vw"}}></div>
+       <div style={{display:"flex",justifyContent:"start",width:"50vw"}}> <span className="total-container">Grand Total: </span>
+        <span> ₹ {total}</span></div>
+      </div>
       </div>
     )
     // ) : (

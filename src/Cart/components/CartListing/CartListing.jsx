@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+import React, { useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
@@ -6,7 +7,7 @@ import "./CartListing.css";
 
 // import { useUserData } from "../../../../contexts/UserDataProvider";
 
-export const CartListing = ({ item }) => {
+export const CartListing = ({ item ,check,setCheck}) => {
   // const {
   //   userDataState,
   //   isProductInWishlist,
@@ -15,6 +16,27 @@ export const CartListing = ({ item }) => {
   //   cartCountHandler,
   //   cartLoading,
   // } = useUserData();
+
+  const [local, setLocal] = useState([])
+
+  useEffect(() => {
+   const localData = JSON.parse(localStorage.getItem("cart_data"))
+   setLocal(localData)
+ }, []);
+
+ const removeFromCartHandler = (id) => {
+  const index = local.indexOf(id);
+  console.log(index,"index")
+if (index > -1) {
+   local.splice(index, 1);
+  setLocal(local)
+  localStorage.setItem("cart_data",JSON.stringify(local))
+  setCheck(!check)
+}
+
+
+}
+
 
   return (
     <div className="cart-products-container">
@@ -50,7 +72,7 @@ export const CartListing = ({ item }) => {
           <div className="secondary-btn-section">
             <MdDelete
               size={25}
-              //onClick={() => removeFromCartHandler(product)}
+              onClick={() => removeFromCartHandler(item._id)}
             />
 
             {/* {!isProductInWishlist(product) ? ( */}

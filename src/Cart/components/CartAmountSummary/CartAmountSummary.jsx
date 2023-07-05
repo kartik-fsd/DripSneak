@@ -40,7 +40,7 @@ export const CartAmountSummary = ({ item }) => {
   //       orderAddress: userDataState.addressList[0],
   //     },
   //   });
-  // };
+  // }; 
 
   return (
     <div className="cart-price-container">
@@ -70,7 +70,7 @@ export const CartAmountSummary = ({ item }) => {
         <span>Free</span>
       </div>
       <div className="total">
-        <span className="total-container">Total: </span>
+        <span className="total-container">Amount: </span>
         <span> ₹ {item?.original_price - "2480"}</span>
       </div>
 
@@ -81,7 +81,7 @@ export const CartAmountSummary = ({ item }) => {
           2480
         </span>
       </div>
-      <Link to="/checkout">Place Order</Link>
+      {/* <Link to="/checkout">Place Order</Link> */}
     </div>
   );
 };

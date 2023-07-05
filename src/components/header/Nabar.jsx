@@ -392,6 +392,8 @@ export default function Navbar() {
   const [isModalOpen, setModalOpen] = React.useState(false);
   const [isDropdownOpen, setDropdownOpen] = React.useState(false);
 
+
+
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
@@ -462,7 +464,9 @@ export default function Navbar() {
         </IconButton>
         <p>Liked Items</p>
       </MenuItem>
-      <MenuItem>
+      <MenuItem  onClick={() => {
+                      navigate(`/cart/list`);
+                    }}>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
@@ -614,7 +618,7 @@ export default function Navbar() {
                 color="inherit"
               >
                 <Badge badgeContent={17} color="error">
-                  <ShoppingCartCheckoutIcon onClick={() => navigate("/cart")} />
+                  <ShoppingCartCheckoutIcon onClick={() => navigate("/cart/list")} />
                 </Badge>
               </IconButton>
               <div>
