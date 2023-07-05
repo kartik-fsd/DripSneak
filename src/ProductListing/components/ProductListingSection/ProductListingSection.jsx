@@ -169,7 +169,7 @@ export const ProductListingSection = () => {
                           handleOpenModal();
                         }, [2000]);
                         handleClick();
-                        errorMessage();
+                        
                       }
                     }}
                     className="cart-btn"
