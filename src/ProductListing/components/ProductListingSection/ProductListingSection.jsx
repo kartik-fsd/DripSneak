@@ -158,7 +158,7 @@ export const ProductListingSection = () => {
                 </div>
 
                 <div className="product-card-buttons">
-                  {local.includes(_id) ? <button
+                  {local?.includes(_id) ? <button
                     onClick={() => {
                       if (login) {
                         navigate(`/cart/list`);
@@ -195,7 +195,7 @@ export const ProductListingSection = () => {
                     ) : (
                       <AiTwotoneHeart size={30} />
                     )} */}
-                    {wishData.includes(_id) ? <AiTwotoneHeart size={30} />:
+                    {wishData?.includes(_id) ? <AiTwotoneHeart size={30} />:
                     <AiOutlineHeart size={30} onClick={()=>handleAddWishlist(_id)}/>}
                   </button>
                 </div>

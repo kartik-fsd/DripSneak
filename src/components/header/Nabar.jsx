@@ -144,7 +144,15 @@ export default function Navbar() {
   const [isModalOpen, setModalOpen] = React.useState(false);
   const [isDropdownOpen, setDropdownOpen] = React.useState(false);
 
+  const [wish, setWish] = React.useState(0);
+  const [cart, setCart] = React.useState(0);
 
+  React.useEffect(() => {
+    const local = JSON.parse(localStorage.getItem("cart_data"))?.length ?? 0;
+    const localWish = JSON.parse(localStorage.getItem("wishlist"))?.length ?? 0;
+    setWish(localWish);
+    setCart(local);
+  }, []);
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
@@ -209,21 +217,23 @@ export default function Navbar() {
       </button>
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
+          <Badge badgeContent={wish} color="error">
             <FavoriteBorderIcon />
           </Badge>
         </IconButton>
         <p>Liked Items</p>
       </MenuItem>
-      <MenuItem  onClick={() => {
-                      navigate(`/cart/list`);
-                    }}>
+      <MenuItem
+        onClick={() => {
+          navigate(`/cart/list`);
+        }}
+      >
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
+          <Badge badgeContent={cart} color="error">
             <ShoppingCartCheckoutIcon />
           </Badge>
         </IconButton>
@@ -358,8 +368,10 @@ export default function Navbar() {
                 aria-label="show 4 new mails"
                 color="inherit"
               >
-                <Badge badgeContent={4} color="error">
-                  <FavoriteBorderIcon />
+                <Badge badgeContent={wish} color="error">
+                  <FavoriteBorderIcon
+                    onClick={() => navigate("/wishlist-details")}
+                  />
                 </Badge>
               </IconButton>
 
@@ -368,8 +380,10 @@ export default function Navbar() {
                 aria-label="show 17 new notifications"
                 color="inherit"
               >
-                <Badge badgeContent={17} color="error">
-                  <ShoppingCartCheckoutIcon onClick={() => navigate("/cart/list")} />
+                <Badge badgeContent={cart} color="error">
+                  <ShoppingCartCheckoutIcon
+                    onClick={() => navigate("/cart/list")}
+                  />
                 </Badge>
               </IconButton>
               <div>

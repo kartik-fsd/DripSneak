@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 import * as React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import AppBar from "@mui/material/AppBar";
@@ -15,6 +16,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import AddressForm from "./AddressForm";
 import PaymentForm from "./PaymentForm";
 import Review from "./Review";
+import { useNavigate } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -49,6 +51,7 @@ const defaultTheme = createTheme();
 
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
+  const navigate = useNavigate();
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -95,6 +98,19 @@ export default function Checkout() {
                 confirmation, and will send you an update when your order has
                 shipped.
               </Typography>
+              <div style={{ display: "flex", justifyContent: "end" }}>
+                <Button
+                  variant="contained"
+                  onClick={() => {}}
+                  sx={{ mt: 3, ml: 1 }}
+                  onClick={() => {
+                    navigate(`/product-listing`);
+                    localStorage.removeItem("cart_data");
+                  }}
+                >
+                  Shop Again
+                </Button>
+              </div>
             </React.Fragment>
           ) : (
             <React.Fragment>
@@ -108,7 +124,9 @@ export default function Checkout() {
 
                 <Button
                   variant="contained"
-                  onClick={handleNext}
+                  onClick={() => {
+                    handleNext();
+                  }}
                   sx={{ mt: 3, ml: 1 }}
                 >
                   {activeStep === steps.length - 1 ? "Place order" : "Next"}
