@@ -1,175 +1,3 @@
-// import "./ProductListingSection.css";
-// import Tilt from "react-parallax-tilt";
-// import React from "react";
-// import { useParams } from "react-router-dom";
-// // import { useData } from "../../../../contexts/DataProvider";
-// import { Link } from "react-router-dom";
-// // import { getCategoryWiseProducts } from "../../../../helpers/filter-functions/category";
-// // import { getRatedProducts } from "../../../../helpers/filter-functions/ratings";
-// // import { getPricedProducts } from "../../../../helpers/filter-functions/price";
-// // import { getSortedProducts } from "../../../../helpers/filter-functions/sort";
-// // import { getSearchedProducts } from "../../../../helpers/searchedProducts";
-// import { AiOutlineHeart } from "react-icons/ai";
-// import { AiTwotoneHeart } from "react-icons/ai";
-// // import { useUserData } from "../../../../contexts/UserDataProvider";
-// import img from "/assets/images/products-images/image-kids-3.png";
-// import { BsFillStarFill } from "react-icons/bs";
-// import { products } from "../../../backend/db/products";
-
-// export const ProductListingSection = ({ item }) => {
-//   // const { type } = useParams();
-
-//   // const { state } = useData();
-//   // const {
-//   //   isProductInCart,
-//   //   isProductInWishlist,
-//   //   wishlistHandler,
-//   //   addToCartHandler,
-//   //   cartLoading,
-//   // } = useUserData();
-
-//   // const {
-//   //   allProductsFromApi,
-//   //   inputSearch,
-//   //   filters: { rating, categories, price, sort },
-//   // } = state;
-
-//   // const searchedProducts = getSearchedProducts(allProductsFromApi, inputSearch);
-
-//   // const ratedProducts = getRatedProducts(searchedProducts, rating);
-
-//   // const categoryProducts = getCategoryWiseProducts(ratedProducts, categories);
-
-//   // const pricedProducts = getPricedProducts(categoryProducts, price);
-
-//   // const sortedProducts = getSortedProducts(pricedProducts, sort);
-
-//   // {
-//   //   _id: uuid(),
-//   //   name: "Ascend TechFit",
-//   //   original_price: 199,
-//   //   discounted_price: 79,
-//   //   category_name: "kid",
-//   //   is_stock: true,
-//   //   rating: 2.7,
-//   //   reviews: 19,
-//   //   description:
-//   //     "Combining cutting-edge technology with urban style, these running shoes feature advanced cushioning, breathable mesh, and a sleek, streamlined design.",
-//   //   trending: false,
-//   //   size: 4,
-//   //   img: "/assets/images/products-images/image-kids-3.png",
-//   // },
-
-//   return (
-//     <div className="product-card-container">
-//       {/* {products
-//         .filter((res) => {
-//           return type == "all" ? res : res.category_name == type;
-//         }) */}
-//       {item.map(
-//         ({
-//           _id,
-//           img,
-//           original_price,
-//           discounted_price,
-//           category_name,
-//           is_stock,
-//           rating,
-//           reviews,
-//           description,
-//           trending,
-//           size,
-//           name,
-//         }) => (
-//           <Tilt
-//             key={_id}
-//             tiltMaxAngleX={5}
-//             tiltMaxAngleY={5}
-//             glareEnable={false}
-//             transitionSpeed={2000}
-//             scale={1.02}
-//           >
-//             <div className="product-card" key={_id}>
-//               <Link to={`/product-details/${_id}`}>
-//                 <div className="product-card-image">
-//                   <Tilt
-//                     transitionSpeed={2000}
-//                     tiltMaxAngleX={15}
-//                     tiltMaxAngleY={15}
-//                     scale={1.18}
-//                   >
-//                     <img src={img} />
-//                   </Tilt>
-//                 </div>
-//               </Link>
-
-//               <div className="product-card-details">
-//                 <h3>{name}</h3>
-//                 <p className="ratings">
-//                   {rating}
-//                   <BsFillStarFill color="orange" /> ({reviews} reviews){" "}
-//                 </p>
-//                 <div className="price-container">
-//                   <p className="original-price">₹{original_price}</p>
-//                   <p className="discount-price">₹{discounted_price}</p>
-//                 </div>
-
-//                 <p>Gender: {category_name}</p>
-//                 <div className="info">
-//                   {!is_stock && <p className="out-of-stock">Out of stock</p>}
-//                   {!trending && <p className="trending">Trending</p>}
-//                 </div>
-//               </div>
-
-//               {/* <div className="product-card-buttons">
-//                 <button
-//                   //disabled={cartLoading}
-//                   onClick={() => addToCartHandler(product)}
-//                   className="cart-btn"
-//                 >
-//                   Add To Cart
-//                 </button>
-//                 <button
-//                   onClick={() => wishlistHandler(product)}
-//                   className="wishlist-btn"
-//                 >
-//                   <AiTwotoneHeart size={30} />
-//                 </button>
-//               </div> */}
-//               <div className="product-card-buttons">
-//                 <button
-//                   //disabled={cartLoading}
-//                   // onClick={() => addToCartHandler(product)}
-//                   className="cart-btn"
-//                 >
-//                   {/* {!isProductInCart(product) ? "Add To Cart" : "Go to Cart"} */}
-//                   <Link
-//                     to="/cart"
-//                     style={{ textDecoration: "none", color: "#ffff" }}
-//                   >
-//                     {" "}
-//                     Add to cart{" "}
-//                   </Link>
-//                 </button>
-//                 <button
-//                   // onClick={() => wishlistHandler(product)}
-//                   className="wishlist-btn"
-//                 >
-//                   {/* {!isProductInWishlist(product) ? ( */}
-//                   <AiOutlineHeart size={30} />
-//                   {/* ) : ( */}
-//                   <AiTwotoneHeart size={30} />
-//                   {/* )} */}
-//                 </button>
-//               </div>
-//             </div>
-//           </Tilt>
-//         )
-//       )}
-//     </div>
-//   );
-// };
-
 import "./ProductListingSection.css";
 import Tilt from "react-parallax-tilt";
 import React, { useEffect, useState } from "react";
@@ -185,16 +13,36 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { AiTwotoneHeart } from "react-icons/ai";
 import { useUserData } from "../../../contexts/UserDataProvider";
 import { BsFillStarFill } from "react-icons/bs";
+import Snackbar from "@mui/material/Snackbar";
+import { Alert } from "@mui/material";
+import LoginModal from "../../../components/auth/LoginModal";
 
 export const ProductListingSection = () => {
   const { state } = useData();
-  // const {
-  //   isProductInCart,
-  //   isProductInWishlist,
-  //   wishlistHandler,
-  //   addToCartHandler,
-  //   cartLoading,
-  // } = useUserData();
+  const [login, setLogin] = useState(false);
+  let email = localStorage.getItem("user_email");
+  const [open, setOpen] = React.useState(false);
+  const [stat, setStat] = React.useState("warning");
+  const [openMOdal, setOpenModal] = React.useState(false);
+  const handleOpenModal = () => setOpenModal(true);
+  const [loggedFlag, seloggedFlag] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+  useEffect(() => {
+    if (email) {
+      setLogin(true);
+    }
+  }, [loggedFlag]);
 
   const {
     allProductsFromApi,
@@ -312,7 +160,17 @@ export const ProductListingSection = () => {
                 <div className="product-card-buttons">
                   {local.includes(_id) ? <button
                     onClick={() => {
-                      navigate(`/cart/list`);
+                      if (login) {
+                        navigate(`/cart/list`);
+                        handleClick();
+                      } else {
+                        setTimeout(() => {
+                          setStat("warning");
+                          handleOpenModal();
+                        }, [2000]);
+                        handleClick();
+                        errorMessage();
+                      }
                     }}
                     className="cart-btn"
                   >
@@ -346,6 +204,36 @@ export const ProductListingSection = () => {
           );
         })
       )}
+      <LoginModal
+        openMOdal={openMOdal}
+        setOpenModal={setOpenModal}
+        seloggedFlag={seloggedFlag}
+      />
+      <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        anchorPosition={{ left: 10, top: 300 }}
+        open={open}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
+        {stat == "warning" ? (
+          <Alert
+            onClose={handleClose}
+            severity={"warning"}
+            sx={{ width: "100%" }}
+          >
+            Please login 🥺{" "}
+          </Alert>
+        ) : (
+          <Alert
+            onClose={handleClose}
+            severity={"error"}
+            sx={{ width: "100%" }}
+          >
+            Success
+          </Alert>
+        )}
+      </Snackbar>
     </div>
   );
 };
