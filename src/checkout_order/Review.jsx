@@ -7,6 +7,9 @@ import Grid from "@mui/material/Grid";
 import { CartProductsSummary } from "../Checkout/components/CartProductsSummary/CartProductsSummary";
 import { BillingSummary } from "../Checkout/components/BillingSummary/BillingSummary";
 import { DeliveryAddress } from "../Checkout/components/DeliveryAddress/DeliveryAddress";
+import { useState } from "react";
+import { useEffect } from "react";
+import { products } from "../backend/db/products";
 
 const addresses = ["1 MUI Drive", "Reactville", "Anytown", "99999", "USA"];
 const payments = [
@@ -17,14 +20,34 @@ const payments = [
 ];
 
 export default function Review() {
+  const [item, setItem] = useState([]);
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    const local = JSON.parse(localStorage.getItem("cart_data"));
+    console.log(products);
+    const data = products.filter((id) => local.includes(id._id));
+    setItem(data);
+
+    const totalAmount = data.reduce(
+      (sum, item) => sum + (item.original_price - 2480),
+      0
+    );
+    setTotal(totalAmount);
+  }, []);
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
         Order summary
       </Typography>
       <List disablePadding>
-        <CartProductsSummary />
-        <BillingSummary />
+        <h1>In Your Bag</h1>
+        {item?.map((it) => (
+          <>
+            <CartProductsSummary item={it} />
+          </>
+        ))}
+        <BillingSummary total={total} />
 
         <DeliveryAddress />
       </List>

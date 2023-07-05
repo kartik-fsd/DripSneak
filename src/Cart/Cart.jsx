@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./Cart.css";
 import { CartAmountSummary } from "./components/CartAmountSummary/CartAmountSummary";
 import { CartListing } from "./components/CartListing/CartListing";
+import { Link, useParams } from "react-router-dom";
 import { products } from "../backend/db/products";
 import { useData } from "../contexts/DataProvider";
 import empty from "/assets/empty.mp4";
@@ -17,6 +18,8 @@ export const Cart = () => {
   useEffect(() => {
     const local = JSON.parse(localStorage.getItem("cart_data"));
     const data = products.filter((product) => local.includes(product._id));
+    console.log(products);
+
     setItem(data);
 
     const totalAmount = data.reduce(
@@ -62,6 +65,27 @@ export const Cart = () => {
               >
                 <span className="total-container">Grand Total: </span>
                 <span>₹ {total}</span>
+                <div
+                  style={{
+                    padding: "2px 5px",
+                    width: "18%",
+                    background: "gray",
+                    borderRadius: "24px",
+                    fontSize: "18px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginRight: "25px",
+                    height: "30px",
+                  }}
+                >
+                  <Link
+                    to="/checkout"
+                    style={{ textDecoration: "auto", color: "white" }}
+                  >
+                    Place Order
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

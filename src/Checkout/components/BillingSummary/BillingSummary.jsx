@@ -2,7 +2,7 @@ import React from "react";
 import "./BillingSummary.css";
 //import { useUserData } from "../../../../contexts/UserDataProvider";
 
-export const BillingSummary = () => {
+export const BillingSummary = ({ total }) => {
   // const { userDataState } = useUserData();
 
   return (
@@ -24,7 +24,7 @@ export const BillingSummary = () => {
         </div>
         <div>
           <span>Total</span>
-          <span>₹7920</span>
+          <span>₹ {total}</span>
         </div>
       </div>
     </div>
