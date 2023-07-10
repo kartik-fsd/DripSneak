@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import "./Cart.css";
-import { CartAmountSummary } from "./components/CartAmountSummary/CartAmountSummary";
-import { CartListing } from "./components/CartListing/CartListing";
-import { Link, useParams } from "react-router-dom";
 import { products } from "../backend/db/products";
 import { useData } from "../contexts/DataProvider";
-import empty from "/assets/empty.mp4";
 import { useNavigate } from "react-router-dom";
+import ProductCards from "./Cart2";
+import { Button, Card, CardContent, Typography } from "@mui/material";
+import AnimationComponent from "./EmptyCart Animation";
 
 export const Cart = () => {
   const { loading } = useData();
@@ -16,14 +15,14 @@ export const Cart = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const local = JSON.parse(localStorage.getItem("cart_data"));
-    const data = products.filter((product) => local.includes(product._id));
+    const local = JSON.parse(localStorage?.getItem("cart_data"));
+    const data = products?.filter((product) => local?.includes(product?._id));
     console.log(products);
 
     setItem(data);
 
     const totalAmount = data.reduce(
-      (sum, item) => sum + (item.original_price - 2480),
+      (sum, item) => sum + (item?.original_price - 2480),
       0
     );
     setTotal(totalAmount);
@@ -31,100 +30,73 @@ export const Cart = () => {
 
   return (
     !loading && (
-      <>
-        {item.length > 0 ? (
+      <div
+        style={{ backgroundColor: "#EEEEEE", width: "100vw", height: "100vh" }}
+      >
+        <Typography
+          variant="h3"
+          component="h3"
+          sx={{
+            fontWeight: "bold",
+            mb: 0,
+            color: "primary",
+            textAlign: "center",
+          }}
+        >
+          Shopping Cart
+        </Typography>
+        {item?.length > 0 ? (
           <div>
-            <h1 className="page-heading" style={{ marginTop: 100 }}>
-              Cart
-            </h1>
             {item.map((it) => (
-              <div key={it.id} className="cart-container">
-                <CartListing item={it} setCheck={setCheck} check={check} />
-                <div>
-                  <CartAmountSummary item={it} />
+              <>
+                <div key={it.id}>
+                  <ProductCards item={it} setCheck={setCheck} check={check} />
                 </div>
-              </div>
+              </>
             ))}
             <div
               style={{
                 fontWeight: 700,
                 fontSize: "35px",
                 color: "black",
-                display: "flex",
-                justifyContent: "space-between",
-                width: "100%",
+                height: "fit-content",
+                position: "fixed",
+                bottom: 0,
+                left: 0,
+                right: 0,
+                MarginTop: "1rem",
+                padding: "1rem 1rem 0rem 1rem",
               }}
             >
-              <div style={{ width: "50vw" }}></div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "start",
-                  width: "50vw",
-                }}
-              >
-                <span className="total-container">Grand Total: </span>
-                <span>₹ {total}</span>
-                <div
+              <Card>
+                <CardContent
                   style={{
-                    padding: "2px 5px",
-                    width: "18%",
-                    background: "gray",
-                    borderRadius: "24px",
-                    fontSize: "18px",
                     display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    marginRight: "25px",
-                    height: "30px",
+                    flexDirection: "row",
+                    justifyContent: "space-around",
                   }}
                 >
-                  <Link
-                    to="/checkout"
-                    style={{ textDecoration: "auto", color: "white" }}
+                  <Typography variant="h5" color={"rgba(0, 0, 0, 0.87)"}>
+                    Total : <span>₹ {total}</span>{" "}
+                  </Typography>
+
+                  <Button
+                    color="warning"
+                    variant="outlined"
+                    onClick={() => navigate("/checkout")}
+                    sx={{ ml: 2 }}
+                    size="small"
                   >
                     Place Order
-                  </Link>
-                </div>
-              </div>
+                  </Button>
+                </CardContent>
+              </Card>
             </div>
           </div>
         ) : (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <video
-              style={{
-                objectFit: "cover",
-                opacity: 0.5,
-                width: 500,
-              }}
-              autoPlay
-              loop
-              muted
-            >
-              <source src={empty} type="video/mp4" />
-            </video>
-            <h3 style={{ textAlign: "center" }}>
-              OOPS....! The Cart Is Empty{"  "}
-              <span
-                className="btn"
-                onClick={() => {
-                  scrollTo(0, 0);
-                  navigate("/product-listing");
-                }}
-              >
-                Continue shopping{" "}
-              </span>
-            </h3>
-          </div>
+          <AnimationComponent />
         )}
-      </>
+      </div>
     )
   );
 };

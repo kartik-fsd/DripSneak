@@ -18,7 +18,7 @@ import { Alert } from "@mui/material";
 import LoginModal from "../../../components/auth/LoginModal";
 
 export const ProductListingSection = () => {
-  const { state } = useData();
+  const { state, flag } = useData();
   const [login, setLogin] = useState(false);
   let email = localStorage.getItem("user_email");
   const [open, setOpen] = React.useState(false);
@@ -48,6 +48,7 @@ export const ProductListingSection = () => {
     allProductsFromApi,
     inputSearch,
     filters: { rating, categories, price, sort },
+    isBadged,
   } = state;
 
   const searchedProducts = getSearchedProducts(allProductsFromApi, inputSearch);
@@ -179,7 +180,10 @@ export const ProductListingSection = () => {
                       // onClick={() => {
                       //   navigate(`/cart/${product?._id}`);
                       // }}
-                      onClick={() => handleAddCart(_id)}
+                      onClick={() => {
+                        handleAddCart(_id);
+                        flag();
+                      }}
                       className="cart-btn"
                     >
                       {/* {!isProductInCart(product) ? "Add To Cart" : "Go to Cart"} */}
@@ -200,7 +204,10 @@ export const ProductListingSection = () => {
                     ) : (
                       <AiOutlineHeart
                         size={30}
-                        onClick={() => handleAddWishlist(_id)}
+                        onClick={() => {
+                          handleAddWishlist(_id);
+                          flag();
+                        }}
                       />
                     )}
                   </button>

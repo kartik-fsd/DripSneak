@@ -1,122 +1,104 @@
 import "./WishlistDescription.css";
 import React, { useState, useEffect } from "react";
 import { BsFillStarFill } from "react-icons/bs";
-import { useUserData } from "../../../contexts/UserDataProvider";
 import { useNavigate } from "react-router-dom";
-import { Alert, Snackbar } from "@mui/material";
-import LoginModal from "../../../components/auth/LoginModal";
+import { useData } from "../../../contexts/DataProvider";
 
-export const WishlistDescription = ({ selectedProduct }) => {
-  // const {
-  //   addToCartHandler,
-  //   wishlistHandler,
-  //   isProductInCart,
-  //   isProductInWishlist,
-  //   cartLoading,
-  // } = useUserData();
+export const WishlistDescription = ({ selectedProduct, setCheck, check }) => {
   const navigate = useNavigate();
   const [login, setLogin] = useState(false);
   let email = localStorage.getItem("user_email");
-  const [open, setOpen] = React.useState(false);
-  const [stat, setStat] = React.useState("warning");
-  const [openMOdal, setOpenModal] = React.useState(false);
-  const handleOpenModal = () => setOpenModal(true);
-  const [loggedFlag, seloggedFlag] = useState(false);
+  const [local, setLocal] = useState([]);
+  const { flag } = useData();
 
-  const handleClick = () => {
-    setOpen(true);
-  };
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
+  useEffect(() => {
+    const localData = JSON.parse(localStorage.getItem("wishlist"));
+    setLocal(localData);
+  }, []);
+  const { loading } = useData();
+  const removeFromCartHandler = (id) => {
+    const index = local.indexOf(id);
+    console.log(index, "index");
+    if (index > -1) {
+      local.splice(index, 1);
+      setLocal(local);
+      localStorage.setItem("wishlist", JSON.stringify(local));
+      setCheck(!check);
     }
-
-    setOpen(false);
   };
+
   useEffect(() => {
     if (email) {
       setLogin(true);
     }
-  }, [loggedFlag]);
-
+  }, []);
+  console.log(!selectedProduct, "true1");
   return (
-    <div className="product-details-description">
-      <h1 className="product-name">{selectedProduct?.name}</h1>
+    !loading &&
+    (login ? (
+      selectedProduct === null || selectedProduct === 0 ? (
+        <div className="wishlist-empty-container">
+          <h2 className="page-heading">Wishlist is Empty</h2>
+          <button onClick={() => navigate("/product-listing")}>Explore</button>
+        </div>
+      ) : (
+        <div>
+          <div className="wishlist-products-container">
+            <div className="wishlist-card" key={selectedProduct?.name}>
+              <div>
+                <img
+                  className="img-container"
+                  src={selectedProduct?.img}
+                  alt="drip"
+                />
+              </div>
 
-      <div className="ratings-reviews">
-        <span></span>
-        <span>{selectedProduct?.rating}</span>{" "}
-        <BsFillStarFill color={"orange"} />
-        <span>
-          <span className="review">({selectedProduct?.reviews}) reviews </span>
-        </span>
-      </div>
+              <div className="product-card-details">
+                <h3>{selectedProduct?.name}</h3>
+                <p className="ratings">
+                  {selectedProduct?.rating}
+                  <BsFillStarFill color="orange" /> ({selectedProduct?.reviews}{" "}
+                  reviews){" "}
+                </p>
+                <div className="price-container">
+                  <p className="original-price">
+                    ${selectedProduct?.original_price}
+                  </p>
+                  <p className="discount-price">
+                    ${selectedProduct?.discounted_price}
+                  </p>
+                </div>
 
-      <div className="product-price-container">
-        <span className="product-original-price">
-          ₹{selectedProduct?.original_price}{" "}
-        </span>
-        <span className="product-discount-price">
-          {" "}
-          ₹{selectedProduct?.discounted_price}
-        </span>
-      </div>
+                <p>Gender: {selectedProduct?.category_name}</p>
+                <div className="info">
+                  {!selectedProduct?.is_stock && (
+                    <p className="out-of-stock">Out of stock</p>
+                  )}
+                  {selectedProduct?.trending && (
+                    <p className="trending">Trending</p>
+                  )}
+                </div>
+              </div>
 
-      <p className="description-container">
-        <span>Description</span>: {selectedProduct?.description}
-      </p>
+              <div className="wishlist-btn-container">
+                <button className="cart-wishlist-btn">Add to Cart</button>
 
-      <span className="gender-container">
-        <span>Gender</span>: {selectedProduct?.category_name}
-      </span>
-      <p className="size-container">
-        <span>Size</span>: {selectedProduct?.size}
-      </p>
-
-      <div className="tags">
-        {!selectedProduct?.is_stock && (
-          <span className="out-of-stock">
-            {selectedProduct?.is_stock ? "In Stock" : "Out of stock"}
-          </span>
-        )}
-        {selectedProduct?.trending && (
-          <span className="trending">
-            {selectedProduct?.trending ? "Trending" : ""}
-          </span>
-        )}
-      </div>
-
-      <LoginModal
-        openMOdal={openMOdal}
-        setOpenModal={setOpenModal}
-        seloggedFlag={seloggedFlag}
-      />
-      <Snackbar
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        anchorPosition={{ left: 10, top: 300 }}
-        open={open}
-        autoHideDuration={3000}
-        onClose={handleClose}
-      >
-        {stat == "warning" ? (
-          <Alert
-            onClose={handleClose}
-            severity={"warning"}
-            sx={{ width: "100%" }}
-          >
-            "Please login 🥺{" "}
-          </Alert>
-        ) : (
-          <Alert
-            onClose={handleClose}
-            severity={"error"}
-            sx={{ width: "100%" }}
-          >
-            Success
-          </Alert>
-        )}
-      </Snackbar>
-    </div>
+                <button
+                  className="remove-from-wishlist-btn"
+                  onClick={() => {
+                    removeFromCartHandler(selectedProduct?._id);
+                    flag();
+                  }}
+                >
+                  Remove from Wishlist
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    ) : (
+      <></>
+    ))
   );
 };

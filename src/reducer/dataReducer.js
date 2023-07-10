@@ -8,9 +8,8 @@ export const initialState = {
     price: [],
     sort: "",
   },
+  isBadged: false,
 };
-
-
 
 export const dataReducer = (state, action) => {
   switch (action.type) {
@@ -75,9 +74,8 @@ export const dataReducer = (state, action) => {
         ...state,
         filters: { ...state.filters, categories: [action.payload] },
       };
-
-    case "RESET":
-      return { ...state, filters: { ...action.payload } };
+    case "IS_BADGE":
+      return { ...state, isBadged: !state.isBadged };
 
     default:
       return state;

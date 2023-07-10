@@ -70,7 +70,7 @@ const darkTheme = createTheme({
 });
 
 export default function Navbar() {
-  const { dispatch } = useData();
+  const { dispatch, state } = useData();
   const navigate = useNavigate();
   let email = localStorage.getItem("user_email");
   console.log(email);
@@ -146,13 +146,15 @@ export default function Navbar() {
 
   const [wish, setWish] = React.useState(0);
   const [cart, setCart] = React.useState(0);
+  const { isBadged } = state;
 
   React.useEffect(() => {
     const local = JSON.parse(localStorage.getItem("cart_data"))?.length ?? 0;
     const localWish = JSON.parse(localStorage.getItem("wishlist"))?.length ?? 0;
     setWish(localWish);
     setCart(local);
-  }, []);
+  }, [isBadged]);
+  console.log(isBadged, "isBadged");
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
@@ -202,6 +204,7 @@ export default function Navbar() {
         className="button"
         onClick={() => {
           scrollTo(0, 0);
+          handleMobileMenuClose();
           navigate("product-listing");
         }}
         style={{
@@ -216,7 +219,15 @@ export default function Navbar() {
         </span>
       </button>
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+        <IconButton
+          size="large"
+          aria-label="show 4 new mails"
+          color="inherit"
+          onClick={() => {
+            navigate("/wishlist-details");
+            handleMobileMenuClose();
+          }}
+        >
           <Badge badgeContent={wish} color="error">
             <FavoriteBorderIcon />
           </Badge>
@@ -225,6 +236,7 @@ export default function Navbar() {
       </MenuItem>
       <MenuItem
         onClick={() => {
+          handleMobileMenuClose();
           navigate(`/cart/list`);
         }}
       >
@@ -232,6 +244,10 @@ export default function Navbar() {
           size="large"
           aria-label="show 17 new notifications"
           color="inherit"
+          onClick={() => {
+            navigate("/cart/list");
+            handleMobileMenuClose();
+          }}
         >
           <Badge badgeContent={cart} color="error">
             <ShoppingCartCheckoutIcon />

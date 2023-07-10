@@ -58,13 +58,20 @@ export function DataProvider({ children }) {
     }
   };
 
+  const flag = () => {
+    // Add the logic to toggle the liked state of the product
+    // Dispatch the "IS_BADGE" action
+    dispatch({ type: "IS_BADGE" });
+  };
+
   useEffect(() => {
     getAllSneakers();
     getCategories();
+    flag();
   }, []);
 
   return (
-    <DataContext.Provider value={{ state, dispatch, loading }}>
+    <DataContext.Provider value={{ state, dispatch, loading, flag }}>
       {children}
     </DataContext.Provider>
   );
