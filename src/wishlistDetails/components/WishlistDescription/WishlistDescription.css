@@ -20,7 +20,7 @@
   margin: 1em 1em 2em 1em;
   border-radius: 1em;
   width: 280px;
-  height: 480px;
+  height: fit-content;
   justify-content: space-between;
   display: flex;
   flex-flow: column nowrap;

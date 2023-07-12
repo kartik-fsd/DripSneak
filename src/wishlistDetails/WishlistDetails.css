@@ -5,6 +5,14 @@
   margin-top: 20px;
 }
 
+.wishlist-products-container {
+  padding: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  
+}
+
 @media (min-width: 768px) {
   .products-page-container {
     margin-top: 100px;

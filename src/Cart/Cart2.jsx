@@ -39,11 +39,23 @@ export default function ProductCards({ item, check, setCheck }) {
   };
   console.log(item, "kk");
   return (
-    <section style={{ backgroundColor: "#eee", height: "100%" }}>
-      <Container sx={{ py: 5, height: "100%" }}>
-        <Grid container justifyContent="center" alignItems="center" spacing={4}>
+    <section
+      style={{
+        backgroundColor: "#eee",
+        height: "fit-content",
+        position: "relative",
+        zIndex: 9999,
+      }}
+    >
+      <Container sx={{ py: 2 }}>
+        <Grid container justifyContent="center" alignItems="center" spacing={2}>
           <Grid item md={10}>
-            <Card sx={{ borderRadius: "0.3rem", mb: 4 }}>
+            <Card
+              sx={{
+                borderRadius: "0.3rem",
+                //mb: 4,
+              }}
+            >
               <CardContent>
                 <Grid
                   container
@@ -95,7 +107,7 @@ export default function ProductCards({ item, check, setCheck }) {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      my: 4,
+                      // my: 4,
                     }}
                   >
                     <IconButton color="primary" size="small">

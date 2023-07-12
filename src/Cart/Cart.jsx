@@ -64,7 +64,6 @@ export const Cart = () => {
                 bottom: 0,
                 left: 0,
                 right: 0,
-                MarginTop: "1rem",
                 padding: "1rem 1rem 0rem 1rem",
               }}
             >

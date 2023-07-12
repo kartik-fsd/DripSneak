@@ -181,8 +181,14 @@ export const ProductListingSection = () => {
                       //   navigate(`/cart/${product?._id}`);
                       // }}
                       onClick={() => {
-                        handleAddCart(_id);
-                        flag();
+                        //is_stock ? handleAddCart(_id) : setStat("warning");
+                        if (is_stock) {
+                          handleAddCart(_id);
+                          flag();
+                        } else {
+                          setStat("secondary");
+                          handleClick();
+                        }
                       }}
                       className="cart-btn"
                     >
@@ -236,6 +242,18 @@ export const ProductListingSection = () => {
             sx={{ width: "100%" }}
           >
             Please login 🥺{" "}
+          </Alert>
+        ) : stat == "secondary" ? (
+          <Alert
+            onClose={handleClose}
+            severity={"error"}
+            sx={{
+              width: "100%",
+              backgroundColor: "#ffffff", // Set the background color to white
+              color: "#000000", // Set the text color to black
+            }}
+          >
+            OOPS The product is out of stock 🥺
           </Alert>
         ) : (
           <Alert

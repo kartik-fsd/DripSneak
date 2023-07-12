@@ -40,16 +40,16 @@ export const WishlistDetails = () => {
           Wishlist ♡
         </Typography>
         {item?.length > 0 ? (
-          item?.map((it) => (
-            <>
+          <div className="wishlist-products-container">
+            {item?.map((it) => (
               <WishlistDescription
                 selectedProduct={it}
                 check={check}
                 setCheck={setCheck}
                 key={it._id}
               />
-            </>
-          ))
+            ))}
+          </div>
         ) : (
           <div
             className="wishlist-empty-container"
