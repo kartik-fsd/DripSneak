@@ -62,10 +62,10 @@ export const WishlistDescription = ({ selectedProduct, setCheck, check }) => {
                 </p>
                 <div className="price-container">
                   <p className="original-price">
-                    ${selectedProduct?.original_price}
+                    ₹{selectedProduct?.original_price}
                   </p>
                   <p className="discount-price">
-                    ${selectedProduct?.discounted_price}
+                    ₹{selectedProduct?.discounted_price}
                   </p>
                 </div>
 

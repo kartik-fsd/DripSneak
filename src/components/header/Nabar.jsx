@@ -20,6 +20,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useData } from "../../contexts/DataProvider";
 import { useUserData } from "../../contexts/UserDataProvider";
 import "./Navbar.css";
+import LoginModal from "../auth/LoginModal";
+import { Alert, Snackbar } from "@mui/material";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -60,20 +62,36 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
-const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
-    primary: {
-      main: "#1976d2",
-    },
-  },
-});
 
 export default function Navbar() {
   const { dispatch, state } = useData();
+  const [login, setLogin] = React.useState(false);
+
+  const [open, setOpen] = React.useState(false);
+  const [stat, setStat] = React.useState("warning");
+  const [openMOdal, setOpenModal] = React.useState(false);
+  const handleOpenModal = () => setOpenModal(true);
+  const [loggedFlag, seloggedFlag] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   const navigate = useNavigate();
   let email = localStorage.getItem("user_email");
-  console.log(email);
+  React.useEffect(() => {
+    if (email) {
+      setLogin(true);
+    }
+  }, [loggedFlag]);
 
   const notifications = [
     {
@@ -94,14 +112,6 @@ export default function Navbar() {
     },
   ];
 
-  // const { userDataState } = useUserData();
-  // const totalProductsInCart = userDataState.cartProducts?.reduce(
-  //   (acc, curr) => {
-  //     return acc + curr.qty;
-  //   },
-  //   0
-  // );
-  // const isProductInCart = () => (Number(totalProductsInCart) ? true : false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -132,15 +142,6 @@ export default function Navbar() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
-  const [anchor, setAnchor] = React.useState(null);
-
-  const handleClick = (event) => {
-    setAnchor(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchor(null);
-  };
   const [isModalOpen, setModalOpen] = React.useState(false);
   const [isDropdownOpen, setDropdownOpen] = React.useState(false);
 
@@ -386,7 +387,17 @@ export default function Navbar() {
               >
                 <Badge badgeContent={wish} color="error">
                   <FavoriteBorderIcon
-                    onClick={() => navigate("/wishlist-details")}
+                    onClick={() => {
+                      if (login) {
+                        navigate("/wishlist-details");
+                      } else {
+                        setTimeout(() => {
+                          setStat("warning");
+                          handleOpenModal();
+                        }, [2000]);
+                        handleClick();
+                      }
+                    }}
                   />
                 </Badge>
               </IconButton>
@@ -398,7 +409,17 @@ export default function Navbar() {
               >
                 <Badge badgeContent={cart} color="error">
                   <ShoppingCartCheckoutIcon
-                    onClick={() => navigate("/cart/list")}
+                    onClick={() => {
+                      if (login) {
+                        navigate("/cart/list");
+                      } else {
+                        setTimeout(() => {
+                          setStat("warning");
+                          handleOpenModal();
+                        }, [2000]);
+                        handleClick();
+                      }
+                    }}
                   />
                 </Badge>
               </IconButton>
@@ -466,6 +487,36 @@ export default function Navbar() {
         {renderMobileMenu}
         {renderMenu}
       </>
+      <LoginModal
+        openMOdal={openMOdal}
+        setOpenModal={setOpenModal}
+        seloggedFlag={seloggedFlag}
+      />
+      <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        anchorPosition={{ left: 10, top: 300 }}
+        open={open}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
+        {stat == "warning" ? (
+          <Alert
+            onClose={handleClose}
+            severity={"warning"}
+            sx={{ width: "100%" }}
+          >
+            Please login 🥺{" "}
+          </Alert>
+        ) : (
+          <Alert
+            onClose={handleClose}
+            severity={"success"}
+            sx={{ width: "100%" }}
+          >
+            Success
+          </Alert>
+        )}
+      </Snackbar>
     </Box>
   );
 }
